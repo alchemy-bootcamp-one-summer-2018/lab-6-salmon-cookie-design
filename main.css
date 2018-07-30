@@ -25,6 +25,7 @@ header {
     height: 200px;
     width: 100%;
     position: fixed;
+    left: 0;
     top: 0;
     display: block;
     margin: 0;
@@ -38,6 +39,7 @@ nav {
     right: 10px;
     bottom: 10px;
     background-color: rgba(64, 249, 155, 1);
+    border: solid rgba(239, 132, 105, 1);
     color: rgba(25, 25, 112, 1); 
 }
 
@@ -48,12 +50,31 @@ div.main {
     color: rgba(25, 25, 112, 1); 
 }
 
+.navbar {
+    display: flex;
+    align-items: center;
+
+}
+
+#index-button {
+    display: flex;
+    align-items: center;
+}
+
+img#top-logo{
+    width: 30px !important
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
 .container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-end;
-}
 
 }
 
