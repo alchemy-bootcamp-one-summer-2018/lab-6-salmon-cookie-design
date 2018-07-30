@@ -1,3 +1,3 @@
-# Lab Title
+# Lab Salmon Cookie
 
-Lab description
+Can adults see why kids love the taste of Salmon Cookie Crunch?
