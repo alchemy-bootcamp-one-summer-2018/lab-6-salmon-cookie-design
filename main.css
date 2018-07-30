@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower|Megrim');
+body {
+    background: #FDFDFD;
+}
+
+div {
+    background: #FAC9B8;
+}
+
+#salmon-logo {
+    background: #FDFDFD;
+}
+
+#salmon {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+#main-header {
+    color: #FAC9B8;
+    font-family: 'Megrim', sans-serif;
+    text-align: center;
+}
+
+.headers {
+    font-family: 'Megrim', cursive;
+    background: #FAC9B8;
+}
+
+#cookie-div {
+    background: #FAC9B8;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.cookies {
+   background: #FDFDFD
+}
+
+.cookie-header {
+    font-family: 'Indie Flower', sans-serif;
+    background: #464646;
+}
