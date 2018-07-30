@@ -48,6 +48,15 @@ div.main {
     color: rgba(25, 25, 112, 1); 
 }
 
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+}
+
 h1 {
     font-family: UrbanJungle;
     font-size: 48px;
@@ -57,7 +66,14 @@ h1 {
     color: rgba(239, 132, 105, 1);
     
 }
+
 h2 {
-    display: block;
+    display: inline-block;
     color: rgba(192, 192, 192, 1);
+
+}
+
+img#top-logo {
+    display: inline-block;
+    width: 300px;
 }
