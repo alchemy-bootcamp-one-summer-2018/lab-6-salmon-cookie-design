@@ -19,6 +19,19 @@ navy: rgba(25, 25, 112, 1);
     src: url("/assets/fonts/UrbanJungle.otf") format("opentype");
 }
 
+@import url('https://fonts.googleapis.com/css?family=Do+Hyeon|Lato|Roboto|Source+Serif+Pro');
+
+/* 
+font-family: 'Lato', sans-serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Do Hyeon', sans-serif;
+font-family: 'Source Serif Pro', serif; */
+
+body {
+    margin: 0;
+    background-color: rgba(192, 192, 192, 1);
+}
+
 header {
 
     box-sizing: border-box;
@@ -45,9 +58,34 @@ nav {
 
 div.main {
     display: block;
-    margin: 220px 10px;
-    background-color: rgba(192, 192, 192, 1);
+    margin: 200px 0px 20px 0px;
     color: rgba(25, 25, 112, 1); 
+    font-family: 'Source Serif Pro', serif; 
+}
+
+div p {
+    margin: 30px 30px 30px 30px;
+}
+
+div table {
+    margin: 30px 30px 30px 30px;
+    border: solid rgba(25, 25, 112, 1);
+    background-color: rgba(232,232,232,1);
+    margin: auto;
+}
+
+th, td {
+    border: 1px solid rgba(239, 132, 105, 1);
+    text-align: center;
+
+}
+
+button {
+    border: 2px solid rgba(64, 249, 155, 1);
+    background-color: rgba(239, 132, 105, 1);
+    color: rgba(25, 25, 112, 1);
+    cursor: pointer;
+
 }
 
 .navbar {
@@ -61,13 +99,27 @@ div.main {
     align-items: center;
 }
 
-img#top-logo{
+img#top-icon{
     width: 30px !important
 }
 
+img#top-logo{
+    width: 60px !important
+}
+
 ul {
-  padding: 0;
-  list-style: none;
+    padding: 2;
+    display: flex;
+    align-items: center;
+
+    list-style: none;
+    font-family: 'Lato', sans-serif;
+    width: 250px;
+    font-size: 14px;
+}
+
+ul a {
+    text-decoration: none;
 }
 
 .container {
@@ -90,11 +142,25 @@ h1 {
 
 h2 {
     display: inline-block;
+    font-family: 'Do Hyeon', sans-serif;
     color: rgba(192, 192, 192, 1);
-
 }
 
-img#top-logo {
+h3 {
+    margin-left: 50px;
+}
+
+img.top-logo {
     display: inline-block;
     width: 300px;
+}
+
+table {
+    font-family: 'Roboto', sans-serif;
+}
+p.question{
+    margin: 5px;
+}
+tfoot {
+    font-weight: bold;
 }
