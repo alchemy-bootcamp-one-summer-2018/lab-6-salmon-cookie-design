@@ -19,6 +19,7 @@ Each store has the following properties
 - The minimum number of customers per hour.
 - The maximum number of customers per hour.
 - The average number of cookies purchased per customer.
+- (sales by hour property - will be added dynamically)
 
 You will need to:
 
@@ -35,8 +36,9 @@ Export the final `stores` array of data
 Use the `toDOM` and template literal technique we used in class.
 
 1. Create a table row for each store, and append to `tbody`
+1. Go ahead and "hard code" positional indexes in table cells: `<td>store.hours[0]</td><td>store.hours[1]</td>`
 1. Totals
-    1. Define a totals array that will hold the totals for each hour
+    1. Define a totals object that has a location property of "Totals" and an hours property that is an array that will hold the totals for each hour
     1. Loop through the data and calculate the totals for each hour
 1. Use the same template to produce table row, but append to `tfoot`
     
