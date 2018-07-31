@@ -16,3 +16,4 @@
     module.html = String.raw;
 
 })(window.module = window.module || {});
+
