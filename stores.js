@@ -2,55 +2,49 @@
 
 (function(module) {
 
-    var locations = [{
+    var stores = [{
         name: 'Pike Place Market',
-        minCust: '23',
-        maxCust: '65',
-        avgCookies: '6.3',
-        key: 'pike'
+        minCust: 23,
+        maxCust: 65,
+        avgCookies: 6
     }, {
         name: 'SeaTac Airport',
-        minCust: '3',
-        maxCust: '24',
-        avgCookies: '1.2',
-        key: 'seatac'
+        minCust: 3,
+        maxCust: 24,
+        avgCookies: 1
     }, {
         name: 'Seattle Center',
-        minCust: '11',
-        maxCust: '38',
-        avgCookies: '3.7',
-        key: 'seattlecenter'
+        minCust: 11,
+        maxCust: 38,
+        avgCookies: 4
     }, {
         name: 'Capitol Hill',
-        minCust: '20',
-        maxCust: '38',
-        avgCookies: '2.3',
-        key: 'caphill'
+        minCust: 20,
+        maxCust: 38,
+        avgCookies: 2
     }, {
         name: 'Alki',
-        minCust: '2',
-        maxCust: '16',
-        avgCookies: '4.6',
-        key: 'alki'
-    }
+        minCust: 2,
+        maxCust: 16,
+        avgCookies: 5
+    }];
 
-    ];
-        var singleStoreHoursArray = [];
-        for(var i = 0; i < 14; i++) {
-            locations[0].hours = [];
-            var hours = Math.floor(Math.random() * (65 - 23)) + 23;
-            console.log('random customers per hour:', locations[0].maxCust);
-            //var custPerHour = [hours];
-            //console.log('array', custPerHour);
-            singleStoreHoursArray.push(hours);
-            console.log("Store Hour Array:", singleStoreHoursArray);
-            console.log('location i', locations[0].minCust);
-            
-            
-            
-            //var numCust = Math.floor((Math.random() + maxCust[i]) + minCust[i]);
+
+        var randomHoursArray = [];
+        var cookieSalesArray = [];
+        for(var j = 0; j < stores.length; j++) {
+            for(var i = 0; i < 14; i++) {
+                var custPerHour = Math.floor(Math.random() * (stores[j].maxCust - stores[j].minCust)) + stores[j].minCust;
+                var cookieSales = custPerHour * stores[j].avgCookies;
+                //console.log('cookie sales:', cookieSales);
+                randomHoursArray.push(custPerHour);
+                cookieSalesArray.push(cookieSales);
+
+            } 
+            console.log("cust per hour array:", randomHoursArray);
+            console.log("cookie sales per hour:", cookieSalesArray);
         }
         
-        module.locations = locations;
+        module.stores = stores;
         
 })(window.module = window.module || {});
