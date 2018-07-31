@@ -30,7 +30,7 @@ name|min|max|avg|key
 'SeaTac Airport'|3|24|1.2|'seatac'
 'Seattle Center'|11|38|3.7|'seattlecenter'
 'Capitol Hill'|20|38|2.3|'caphill'
-'Alki'|2|16|4.6|'alki')
+'Alki'|2|16|4.6|'alki'
 
 You will need to:
 
