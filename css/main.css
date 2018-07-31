@@ -122,7 +122,7 @@ p {
     flex-direction: column;
     padding: 2.3em 0;
     border-bottom: 3px solid rgba(239, 132, 105, 1);
-    background-color: rgba(28, 29, 33, 1);
+    background: linear-gradient(to top left, rgb(9, 9, 10),rgb(68, 68, 68));
 }
 
 .logo-container {
