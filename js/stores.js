@@ -35,7 +35,7 @@
     
     }];
 
-    module.stores = stores;
+ 
 
     var hours = function() {
         for(var j = 0; j < 14; i++) {
@@ -49,6 +49,6 @@
     // for(var i = 0; i < stores.length; i++) {
     //     hours();
     // }
-
+    module.stores = stores;
 
 })(window.module = window.module || {})
