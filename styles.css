@@ -53,6 +53,7 @@ header {
 
 #header-headline p {
     font-weight: 500;
+    font-size: 18px;
 }
 
 #section1 {
@@ -62,7 +63,7 @@ header {
     color: white;
 }
 
-#section1 h2 {
+section h2 {
     color: #f8ac68;
     margin-top: 0;
     text-align: center;
@@ -119,4 +120,8 @@ header {
     height: 90%;
     vertical-align: middle;
     display: inline-block !important;
+}
+
+iframe {
+    float: right;
 }
