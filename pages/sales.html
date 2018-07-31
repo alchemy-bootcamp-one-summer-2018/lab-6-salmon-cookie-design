@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="/css/main.css" type="text/css">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/salmon-icon.png" />
+    <title>Salmon Industries - Sales</title>
+</head>
+
+
+<body>
+
+    <header class="header-container">
+        <div class="logo">
+            <a href="index.html" title="Salmon Industries - Sales">
+                <img src="/images/salmon.png" width="180">
+            </a>
+            <h1 class="head-title">Salmon Industries</h1>
+        </div>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/index.html" title="Home">Home</a>
+                </li>
+                <li>
+                    <a class="active" href="/pages/sales.html" title="Sales">Sales</a>
+                </li>
+                <li>
+                    <a href="/pages/products.html" title="Product Gallery">Product Gallery</a>
+                </li>
+                <li>
+                    <a href="/pages/about.html" title="Our story">Our Story</a>
+                </li>
+                <li>
+                    <a href="/pages/contact.html" title="Contact">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Sales</h1>
+            
+        <section class="store-grid">
+            
+            <div class="store-form">
+                <form>
+                    <fieldset>
+                        <legend>Add a new store to the table</legend>
+                
+                        <p class="question">Location Name</p>
+                        <input class="text" type="text" name="locationName" placeholder="Enter location" required/>
+                
+                        <p class="question">Minimum Customers Per Hour</p>
+                        <input class="text" type="text" name="minCustomers" placeholder="Enter minimum customers" required/>
+                
+                        <p class="question">Maximum Customers Per Hour</p>
+                        <input class="text" type="text" name="maxCustomers" placeholder="Enter maximum customers" required/>
+                
+                        <p class="question">Average Cookies Per Sale</p>
+                        <input class="text" type="text" name="avgSale" placeholder="Enter average cookies per sale" required/>
+                    </fieldset>
+                
+                    <div>
+                        <button id="sales-submit" type="submit">Click here to add!</button>
+                        <button id="sales-reset" type="reset">Start Over</button>
+                    </div>   
+                </form>
+            </div>
+        
+            <div class="store-table">
+                <table>
+                    <caption>
+                        <strong>Sales Table</strong>
+                    </caption>
+                    <thead>
+                        <tr>
+                            <th>Locations</th>
+                            <th>6am</th>
+                            <th>7am</th>
+                            <th>9am</th>
+                            <th>10am</th>
+                            <th>11am</th>
+                            <th>12pm</th>
+                            <th>1pm</th>
+                            <th>2pm</th>
+                            <th>3pm</th>
+                            <th>4pm</th>
+                            <th>5pm</th>
+                            <th>6pm</th>
+                            <th>7pm</th>
+                            <th>Location Totals</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <td>Hourly Totals for All Locations</td>
+                            <td>180</td>
+                            <td>180</td>
+                            <td>180</td>
+                            <td>180</td>
+                            <td>180</td>
+                            <td>180</td>
+                            <td>180</td>
+                            <td>180</td>
+                            <td>180</td>
+                            <td>180</td>
+                            <td>180</td>
+                            <td>180</td>
+                            <td>180</td>
+                            <td class="cell-totals">180</td>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        <tr>
+                            <td>Pike Place Market</td>
+                            <td>$100</td>
+                            <td>$100</td>
+                            <td>$100</td>
+                            <td>$100</td>
+                            <td>$100</td>
+                            <td>$100</td>
+                            <td>$100</td>
+                            <td>$100</td>
+                            <td>$100</td>
+                            <td>$100</td>
+                            <td>$100</td>
+                            <td>$100</td>
+                            <td>$100</td>
+                            <td class="cell-totals">180</td>
+                        </tr>
+                        <tr>
+                            <td>SeaTac Airport</td>
+                            <td>$100</td>
+                            <td>$100</td>
+                            <td>$100</td>
+                            <td>$100</td>
+                            <td>$100</td>
+                            <td>$100</td>
+                            <td>$100</td>
+                            <td>$100</td>
+                            <td>$100</td>
+                            <td>$100</td>
+                            <td>$100</td>
+                            <td>$100</td>
+                            <td>$100</td>
+                            <td class="cell-totals">180</td>
+                        </tr>
+                        <tr>
+                            <td>Seattle Center</td>
+                            <td>$100</td>
+                            <td>$100</td>
+                            <td>$100</td>
+                            <td>$100</td>
+                            <td>$100</td>
+                            <td>$100</td>
+                            <td>$100</td>
+                            <td>$100</td>
+                            <td>$100</td>
+                            <td>$100</td>
+                            <td>$100</td>
+                            <td>$100</td>
+                            <td>$100</td>
+                            <td class="cell-totals">180</td>
+                        </tr>
+                        <tr>
+                            <td>Capitol Hill</td>
+                            <td>$100</td>
+                            <td>$100</td>
+                            <td>$100</td>
+                            <td>$100</td>
+                            <td>$100</td>
+                            <td>$100</td>
+                            <td>$100</td>
+                            <td>$100</td>
+                            <td>$100</td>
+                            <td>$100</td>
+                            <td>$100</td>
+                            <td>$100</td>
+                            <td>$100</td>
+                            <td class="cell-totals">180</td>
+                        </tr>
+                        <tr>
+                            <td>Alki</td>
+                            <td>$100</td>
+                            <td>$100</td>
+                            <td>$100</td>
+                            <td>$100</td>
+                            <td>$100</td>
+                            <td>$100</td>
+                            <td>$100</td>
+                            <td>$100</td>
+                            <td>$100</td>
+                            <td>$100</td>
+                            <td>$100</td>
+                            <td>$100</td>
+                            <td>$100</td>
+                            <td class="cell-totals">180</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+        
+        
+
+
+
+
+    </main>
+
+    <footer>
+        <img src="/images/salmon-icon.png" width="72">
+        <p> &copy; 2018 Salmon Industries - All Rights Reserved</p>
+    </footer>
+</body>
+
+</html>
