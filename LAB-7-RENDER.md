@@ -32,6 +32,8 @@ name|min|max|avg|key
 'Capitol Hill'|20|38|2.3|'caphill'
 'Alki'|2|16|4.6|'alki'
 
+All stores are open from 6am to 8pm
+
 You will need to:
 
 1. Have a static array that defines each store
