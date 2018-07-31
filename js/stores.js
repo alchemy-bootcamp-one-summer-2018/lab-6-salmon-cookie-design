@@ -1,7 +1,7 @@
 'use strict';
 
 (function(module) {
-    
+
     var stores = [{
         name: 'Pike Place Market',
         min: '23',
@@ -32,23 +32,29 @@
         max: '16',
         avg: '4.6',
         key: 'Alki'    
-    
     }];
 
- 
-
-    var hours = function() {
-        for(var j = 0; j < 14; i++) {
-            salesThisHour = Math.floor(Math.random() * stores[i].max);
-            stores[i].sales.push(salesThisHour);
-            console.log(stores);
+    
+    for(var i = 0; i < stores.length; i++) {
+        stores[i].customers = [];
+        for(var j = 0; j < 14; j++) {
+            var min = Math.ceil(parseInt(stores[i].min));
+            var max = Math.floor(parseInt(stores[i].max));
+            var customersThisHour = Math.floor(Math.random() * (max - min)) + min;
+            stores[i].customers.push(customersThisHour);
         }
-        console.log(stores);
     }
 
-    // for(var i = 0; i < stores.length; i++) {
-    //     hours();
-    // }
+    for(var i = 0; i < stores.length; i++) {
+        stores[i].macaronsPerHour = [];
+        for(var j = 0; j < 14; j++) {
+            var macaronsThisHour = Math.ceil((parseFloat(stores[i].customers[j])) * (parseFloat(stores[i].avg)));
+            stores[i].macaronsPerHour.push(macaronsThisHour);
+        }
+    }
+
     module.stores = stores;
 
-})(window.module = window.module || {})
+})(window.module = window.module || {});
+
+console.log('module working', module.stores);
