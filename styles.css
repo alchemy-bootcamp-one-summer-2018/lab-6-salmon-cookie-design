@@ -20,7 +20,8 @@ header {
     background-image: url("images/macaron6.jpg");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover; 
+    background-size: cover;
+    background-attachment: fixed; 
 }
 
 #header-nav { 
@@ -143,7 +144,7 @@ td {
 }
 
 table {
-    margin: 30px;
+    margin: 30px auto;
     text-align: center;
 }
 
@@ -154,14 +155,26 @@ th {
 
 #form-label {
     font-family: 'Montserrat', sans-serif;
-    color: #f8ab68;
-    text-shadow: 2px 2px 4px black;
+    color: black;
 }
 
 form {
-    margin: 30px;
+    margin: 30px auto;
+    width: 260px;
 }
 
 #sales-title {
     margin-bottom: 60px;
+    text-align: center;
+}
+
+#location-info {
+    float: left;
+    margin-left: 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+}
+
+#sales-page h2 {
+    text-align: center;
 }
