@@ -72,11 +72,15 @@ header {
 
 .text-right {
     display: inline-block;
-    float: left;
     vertical-align: middle;
 }
 
-.text-right h3 {
+.text-left {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.sub-section h3 {
     margin-top: 0;
     padding-top: 0;
 }
@@ -87,12 +91,12 @@ header {
     align-items: stretch;
     max-width: 868px; 
     min-width: 791px;
-    margin: 0 auto; 
+    margin: 35px auto; 
 }
 
 .thumb {
     height: 90%;
     vertical-align: middle;
     display: inline-block;
-    margin-left: 40px;
+    /* margin-left: 40px; */
 }
