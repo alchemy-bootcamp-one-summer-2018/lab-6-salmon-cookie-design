@@ -29,7 +29,7 @@ header {
     padding: 30px;
     width: 100vw;
     height: 15%;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.6);
     justify-content: center;
 }
 
@@ -47,7 +47,7 @@ header {
 }
 
 #header-headline h2, p {
-    padding: 0 30px;
+    padding: 0 50px;
     text-shadow: none;
 }
 
@@ -77,25 +77,28 @@ section h2 {
     font-weight: 300;
 }
 
-
-.text-right {
-    display: inline-block;
-    vertical-align: middle;
-}
-
-.text-left {
-    display: inline-block;
-    vertical-align: middle;
-}
-
 .text-left p, 
 .text-left h3 {
+    padding-right: 0;
     padding-left: 0;
 }
 
 .text-right p, 
 .text-right h3 {
+    padding-left: 0;
     padding-right: 0;
+}
+
+.text-right {
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 30px;
+}
+
+.text-left {
+    display: inline-block;
+    vertical-align: middle;
+    padding-right: 30px;
 }
 
 .sub-section h3 {
