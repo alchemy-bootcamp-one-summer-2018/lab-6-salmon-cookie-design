@@ -20,9 +20,7 @@ header {
     background-image: url("images/macaron6.jpg");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
-    
-    
+    background-size: cover; 
 }
 
 #header-nav { 
@@ -113,9 +111,12 @@ header {
     margin: 35px auto;
 }
 
+.thumb-container {
+    display: inline-block;
+}
+
 .thumb {
     height: 90%;
     vertical-align: middle;
-    display: inline-block;
-    /* margin-left: 40px; */
+    display: inline-block !important;
 }
