@@ -35,18 +35,21 @@
     }];
 
     
-    console.log('hours working');
     for(var i = 0; i < stores.length; i++) {
-        stores[i].sales = [];
+        stores[i].customers = [];
         for(var j = 0; j < 14; j++) {
-            var salesThisHour = Math.floor(Math.random() * parseInt(stores[i].max));
-            stores[i].sales.push(salesThisHour);
+            var customersThisHour = Math.floor(Math.random() * parseInt(stores[i].max));
+            stores[i].customers.push(customersThisHour);
         }
     }
 
-
-    // hours();
-    console.log('stores', stores);
+    for(var i = 0; i < stores.length; i++) {
+        stores[i].macaronsPerHour = [];
+        for(var j = 0; j < 14; j++) {
+            var macaronsThisHour = (parseFloat(stores[i].customers[j])) * (parseFloat(stores[i].avg));
+            stores[i].macaronsPerHour.push(macaronsThisHour);
+        }
+    }
 
     module.stores = stores;
 
