@@ -3,9 +3,11 @@ Lab 7: Rendering Dynamic Content
 
 Make your sales table data-driven.
 
+Use a new branch `render`
+
 ## Module
 
-Use the `'use strict';` and IIFE technique
+Use the `'use strict';` and IIFE technique. Don't forget to add each module as a `<script>` in `sales.html`
 
 ## Data
 
