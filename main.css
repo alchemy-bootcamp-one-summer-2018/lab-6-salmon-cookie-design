@@ -27,6 +27,9 @@ font-family: 'Roboto', sans-serif;
 font-family: 'Do Hyeon', sans-serif;
 font-family: 'Source Serif Pro', serif; */
 
+html { overflow-y: scroll; }
+
+
 body {
     margin: 0;
     background-color: rgba(192, 192, 192, 1);
