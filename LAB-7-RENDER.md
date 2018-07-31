@@ -16,10 +16,21 @@ Create a `stores.js` module that exports store data.
 Each store has the following properties
 
 - Location/Name
+- Key
 - The minimum number of customers per hour.
 - The maximum number of customers per hour.
 - The average number of cookies purchased per customer.
 - (sales by hour property - will be added dynamically)
+
+Example Data:
+
+name|min|max|avg|key
+---|---|---|---|---
+'Pike Place Market'|23|65|6.3|'pike'
+'SeaTac Airport'|3|24|1.2|'seatac'
+'Seattle Center'|11|38|3.7|'seattlecenter'
+'Capitol Hill'|20|38|2.3|'caphill'
+'Alki'|2|16|4.6|'alki')
 
 You will need to:
 
