@@ -35,14 +35,16 @@
     }
 
     ];
-
+        var singleStoreHoursArray = [];
         for(var i = 0; i < 14; i++) {
             locations[0].hours = [];
             var hours = Math.floor(Math.random() * (65 - 23)) + 23;
-            console.log('random customers per hour:', hours);
-            var custPerHour = [hours];
-            console.log('array', custPerHour);
-            custPerHour.push(hours);
+            console.log('random customers per hour:', locations[0].maxCust);
+            //var custPerHour = [hours];
+            //console.log('array', custPerHour);
+            singleStoreHoursArray.push(hours);
+            console.log("Store Hour Array:", singleStoreHoursArray);
+            console.log('location i', locations[0].minCust);
             
             
             
