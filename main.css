@@ -1,0 +1,46 @@
+h1 {
+    font-family: didot;
+    font-size: 50px;
+    text-align: center;
+   text-align: left;
+    color: #F26419;
+}
+body {
+    color: #C75215;
+    background-color: papayawhip;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJSJSf3mG9_a7Q2RdT9EL4hSrKuSoaMilmgnljsllmU8xsoQUk");
+    font-family:'PT Sans', sans-serif;
+
+   } 
+span {
+    font-size: 22px;
+    padding-right:100px;
+}
+#about-us {
+    color:#44414C;
+    position: sticky;
+    font-family: sans-serif
+}
+#about-us {
+    border: 5px solid gray; 
+    padding:20px;
+    line-height:1.5
+}
+footer {
+    font-size: 20px;
+    align-content: center
+}
+h2 {
+    font-family:Georgia, 'Times New Roman', Times, serif
+}
+table {
+    border-top: double;
+    border-right: double;
+    border-bottom: double;
+    border-left: double;
+    border-collapse: collapse;
+}
+th, td {
+    border:1px green;
+    padding: 20px;
+}
