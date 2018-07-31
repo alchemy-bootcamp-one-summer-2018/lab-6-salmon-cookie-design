@@ -1,16 +1,16 @@
-var store = {
+var stores = [{
     name: 'Pike Place Market',
     min: '23',
     max: '65',
     avg: '6.3',
     key: 'pike'
-};
-// }, {
-//     name: 'SeaTac Airport',
-//     min: '3',
-//     max: '24',
-//     avg: '1.2',
-//     key: 'seatac'    
+}, {
+    name: 'SeaTac Airport',
+    min: '3',
+    max: '24',
+    avg: '1.2',
+    key: 'seatac'    
+}];
 // }, {
 //     name: 'Seattle Center',
 //     min: '11',
@@ -33,12 +33,15 @@ var store = {
 
 function hours() {
     console.log('hours working');
-    salesThisHour = Math.floor(Math.random() * parseInt(store.max));
-        store.sales = [];
-        store.sales.push(salesThisHour);
-        
+    for(i = 0; i < stores.length; i++) {
+        for(j = 0; j < 14; j++) {
+            salesThisHour = Math.floor(Math.random() * parseInt(stores[i].max));
+            stores[i].sales = [];
+            stores[i].sales.push(salesThisHour);
+        }
+    }    
 }
 
 hours();
-console.log('stores', store);
+console.log('stores', stores);
 
