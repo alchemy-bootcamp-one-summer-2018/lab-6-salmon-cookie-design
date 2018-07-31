@@ -13,12 +13,10 @@
 <body>
 
     <header class="header-container">
-        <div class="logo">
-            <a href="index.html" title="Salmon Industries - Sales">
-                <img src="/images/salmon.png" width="180">
-            </a>
+        <a class="logo-container" href="/index.html" title="Salmon Industries - Home">
+            <img src="/images/salmon.png" width="180">
             <h1 class="head-title">Salmon Industries</h1>
-        </div>
+        </a>
         <nav>
             <ul>
                 <li>
@@ -38,10 +36,19 @@
                 </li>
             </ul>
         </nav>
+
+        <p class="core-info">
+            <br> 12345 Main St
+            <br> Portland, OR 97220
+            <br> 12:02am - 11:58pm
+            <br> (877) GET - FISH
+            <br>
+            <a style="color: rgba(239, 132, 105, 1);" href="https://www.youtube.com/watch?v=i9SSOWORzw4">somethingisfishy@aol.com</a>
+        </p>
     </header>
 
     <main>
-        <h1>Sales</h1>
+        <h2>Sales</h2>
             
         <section class="store-grid">
             
@@ -64,17 +71,15 @@
                     </fieldset>
                 
                     <div>
-                        <button id="sales-submit" type="submit">Click here to add!</button>
+                        <button id="sales-submit" type="submit">Add Store</button>
                         <button id="sales-reset" type="reset">Start Over</button>
                     </div>   
                 </form>
             </div>
         
             <div class="store-table">
+                <h2>Locations vs Sales Totals</h2>
                 <table>
-                    <caption>
-                        <strong>Sales Table</strong>
-                    </caption>
                     <thead>
                         <tr>
                             <th>Locations</th>
@@ -216,6 +221,9 @@
         <img src="/images/salmon-icon.png" width="72">
         <p> &copy; 2018 Salmon Industries - All Rights Reserved</p>
     </footer>
+
+    <script src="/javascript/app.js"></script>
+
 </body>
 
 </html>
