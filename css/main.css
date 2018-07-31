@@ -52,7 +52,8 @@ th {
     width: 80px;
 }
 td {
-    padding: 5px 0px 5px 8px;
+    padding: 5px;
+    text-align: center;
 }
 
 #footer {
