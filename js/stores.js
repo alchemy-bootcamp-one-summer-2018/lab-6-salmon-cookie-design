@@ -6,57 +6,46 @@
         name: 'Pike Place Market',
         minCustomers: 10,
         maxCustomers: 40,
-        avgSale: 5.2,
-        //totalCookies: customerCount(10, 40) * 5.2 
+        avgSale: 5,
     }, {
         name: 'SeaTac Airport',
         minCustomers: 7,
         maxCustomers: 53,
-        avgSale: 7.3,
-        //totalCookies: customerCount(7, 53) * 7.3
+        avgSale: 7,
     }, {
         name: 'Seattle Center',
         minCustomers: 8,
         maxCustomers: 25,
-        avgSale: 4.4,
-        //totalCookies: customerCount(8, 25) * 4.4
+        avgSale: 4,
     }, {
         name: 'Capitol Hill',
         minCustomers: 12,
         maxCustomers: 44,
-        avgSale: 5.9,
-        //totalCookies: customerCount(12, 44) * 5.9
+        avgSale: 6,
     }, {
         name: 'Alki',
         minCustomers: 14,
         maxCustomers: 39,
-        avgSale: 7.9,
-        //totalCookies: customerCount(14, 39) * 7.9
+        avgSale: 8,
     }];
-    //Loop thru stores and add an hours property that is an array of values
-    // (cookies sold) for each hour
+    
     for(var i = 0; i < stores.length; i++){
         stores[i].hours = [];
-        // for(var h = 0; h < 14; h++){
-        //     stores.hours[h] = customerCount(stores[i].minCustomers, stores[i].maxCustomers);
-        // }
+        stores[i].cookiesSold = [];
+        for(var h = 0; h < 14; h++){
+            var customersPerHour = customerCount(stores[i].minCustomers, stores[i].maxCustomers);
+            stores[i].hours.push(customersPerHour);
+            var cookiesPerHour = customersPerHour * stores[i].avgSale;
+            stores[i].cookiesSold.push(cookiesPerHour);
+        }
     }
-    //Loop for the number of hours stores are open
-    //for(var h = 0; h < 
-    // Use a random function to produce a number of customers that is
-    // between the min and max for each store
-           
+      
     function customerCount(min, max) {
         min = Math.ceil(min);
         max = Math.floor(max);
         return Math.floor(Math.random() * (max - min)) + min;
     }
-    
-    // Multiple the customers number by the average cookies purchased 
-    // per customer
-
-    
+   
     module.stores = stores;
-
 
 })(window.module = window.module || {});
