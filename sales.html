@@ -5,9 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:600|Lato:300|Lato:500" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <h1>Savor Salmon Macarons: Sales Data</h1>
+
     <label>Add a new store to the table
         <form>
             <input type="text">Location name
@@ -16,29 +21,31 @@
             <input type="number">Average macarons per sale
         </form>
     </label>
+
     <table>
         <thead>
             <tr>
-                <th>100</th>
-                <th>100</th>
-                <th>100</th>
-                <th>100</th>
-                <th>100</th>
-                <th>100</th>
-                <th>100</th>
-                <th>100</th>
-                <th>100</th>
-                <th>100</th>
-                <th>100</th>
-                <th>100</th>
-                <th>100</th>
-                <th>100</th>
-                <th>100</th>
-                <th>100</th>
+                <th>Locations</th>
+                <th>6am</th>
+                <th>7am</th>
+                <th>8am</th>
+                <th>9am</th>
+                <th>10am</th>
+                <th>11am</th>
+                <th>12pm</th>
+                <th>1pm</th>
+                <th>2pm</th>
+                <th>3pm</th>
+                <th>4pm</th>
+                <th>5pm</th>
+                <th>6pm</th>
+                <th>7pm</th>
+                <th class="totals">Location Totals</th>
             </tr>
         </thead>
         <tbody>
             <tr>
+                <td>Pike Place Market</td>
                 <td>100</td>
                 <td>100</td>
                 <td>100</td>
@@ -53,10 +60,10 @@
                 <td>100</td>
                 <td>100</td>
                 <td>100</td>
-                <td>100</td>
-                <td>100</td>
+                <td class="totals">1400</td>
             </tr>
             <tr>
+                <td>SeaTac Airport</td>
                 <td>100</td>
                 <td>100</td>
                 <td>100</td>
@@ -71,10 +78,10 @@
                 <td>100</td>
                 <td>100</td>
                 <td>100</td>
-                <td>100</td>
-                <td>100</td>
+                <td class="totals">1400</td>
             </tr>
             <tr>
+                <td>Seattle Center</td>
                 <td>100</td>
                 <td>100</td>
                 <td>100</td>
@@ -89,10 +96,10 @@
                 <td>100</td>
                 <td>100</td>
                 <td>100</td>
-                <td>100</td>
-                <td>100</td>
+                <td class="totals">1400</td>
             </tr>
             <tr>
+                <td>Capitol Hill</td>
                 <td>100</td>
                 <td>100</td>
                 <td>100</td>
@@ -107,10 +114,10 @@
                 <td>100</td>
                 <td>100</td>
                 <td>100</td>
-                <td>100</td>
-                <td>100</td>
+                <td class="totals">1400</td>
             </tr>
             <tr>
+                <td>Alki</td>
                 <td>100</td>
                 <td>100</td>
                 <td>100</td>
@@ -125,28 +132,27 @@
                 <td>100</td>
                 <td>100</td>
                 <td>100</td>
-                <td>100</td>
-                <td>100</td>
+                <td class="totals">1400</td>
             </tr>
         </tbody>
         <tfoot>
             <tr>
-                <td>100</td>
-                <td>100</td>
-                <td>100</td>
-                <td>100</td>
-                <td>100</td>
-                <td>100</td>
-                <td>100</td>
-                <td>100</td>
-                <td>100</td>
-                <td>100</td>
-                <td>100</td>
-                <td>100</td>
-                <td>100</td>
-                <td>100</td>
-                <td>100</td>
-                <td>100</td>
+                <td>Hourly Totals for All Locations</td>
+                <td>500</td>
+                <td>500</td>
+                <td>500</td>
+                <td>500</td>
+                <td>500</td>
+                <td>500</td>
+                <td>500</td>
+                <td>500</td>
+                <td>500</td>
+                <td>500</td>
+                <td>500</td>
+                <td>500</td>
+                <td>500</td>
+                <td>500</td>
+                <td class="totals">7000</td>
             </tr>
         </tfoot>
     </table>

@@ -129,3 +129,25 @@ iframe {
     float: right;
     margin-top: 20px;
 }
+
+table,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.totals, th, tfoot {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f8ab6881;
+}
+
+table {
+    margin: 30px;
+    text-align: center;
+}
+
+td,
+th {
+    padding: 5px;
+}
