@@ -151,3 +151,17 @@ td,
 th {
     padding: 5px;
 }
+
+#form-label {
+    font-family: 'Montserrat', sans-serif;
+    color: #f8ab68;
+    text-shadow: 2px 2px 4px black;
+}
+
+form {
+    margin: 30px;
+}
+
+#sales-title {
+    margin-bottom: 60px;
+}
