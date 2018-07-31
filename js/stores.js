@@ -7,31 +7,31 @@
         key: 'pike',
         minCust: 23,
         maxCust: 65,
-        avgCookies: 6.3
+        avgCookies: 6
     }, {
         name: 'SeaTac Airport',
         key: 'seatac',
         minCust: 3,
         maxCust: 24,
-        avgCookies: 1.2
+        avgCookies: 1
     }, {
         name: 'Seattle Center',
         key: 'seattlecenter',
         minCust: 11,
         maxCust: 38,
-        avgCookies: 3.7
+        avgCookies: 4
     }, {
         name: 'Capitol Hill',
         key: 'caphill',
         minCust: 20,
         maxCust: 38,
-        avgCookies: 2.3
+        avgCookies: 2
     }, {
         name: 'Alki',
         key: 'alki',
         minCust: 2,
         maxCust: 16,
-        avgCookies: 4.6
+        avgCookies: 5
     }];
 
     // var numCust = Math.floor((Math.random() * stores.arrayPosition[i].minCust) + stores.arrayPosition[i].maxCust);
@@ -48,16 +48,70 @@
 
     //build another four loop to loop through all the stores
 
-    var singleStoreHoursArray = [];
+    var randomHoursArray = [];
+    var cookieSalesArray = [];
 
-    for(var i = 0; i < 14; i++) {
-        stores[0].hours = [];
-        var hours = Math.floor(Math.random() * (stores[0].maxCust - stores[0].minCust)) + stores[0].minCust;
-        console.log('random cust per hours', hours);
-        // var custPerHourArr = [hours];
-        singleStoreHoursArray.push(hours);
-        console.log('cust per hour array', singleStoreHoursArray);
+    for(var j = 0; j < stores.length; j++) {
+        for(var i = 0; i < 14; i++) {
+            var custPerHours = Math.floor(Math.random() * (stores[j].maxCust - stores[j].minCust)) + stores[j].minCust;
+            var cookieSales = custPerHours * stores[j].avgCookies;
+            console.log('cookie sales:', cookieSales); 
+            
+            randomHoursArray.push(custPerHours);
+            cookieSalesArray.push(cookieSales);
+            // cookieSalesArray.push(cookieSales);
+            // names.property
+        }
+        console.log('random cust per hour array', randomHoursArray);
+        console.log('cookie sales per hour array', cookieSalesArray);
     }
+
+
+
+
+
+
+
+
+
+
+
+    // var seaTacHoursArray = [];
+
+    // for(var i = 0; i < 14; i++) {
+    //     var hours = Math.floor(Math.random() * (stores[1].maxCust - stores[1].minCust)) + stores[1].minCust;
+    //     seaTacHoursArray.push(hours);
+    // }
+    // console.log('seaTac random cust per hour array', seaTacHoursArray);
+
+    // var seattleCenterHoursArray = [];
+
+    // for(var i = 0; i < 14; i++) {
+    //     var hours = Math.floor(Math.random() * (stores[1].maxCust - stores[1].minCust)) + stores[1].minCust;
+    //     seattleCenterHoursArray.push(hours);
+    // }
+    // console.log('seattleCenter random cust per hour array', seattleCenterHoursArray);
+
+    // var capitolHillHoursArray = [];
+
+    // for(var i = 0; i < 14; i++) {
+    //     var hours = Math.floor(Math.random() * (stores[1].maxCust - stores[1].minCust)) + stores[1].minCust;
+    //     capitolHillHoursArray.push(hours);
+    // }
+    // console.log('capitolHill random cust per hour array', capitolHillHoursArray);
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     module.stores = stores;
 
