@@ -7,7 +7,6 @@ var stores = [
         minCust: 23,
         maxCust: 65,
         perSale: 6.3,
-        perHour: null,
     },
     {
         name: 'SeaTac Airport',
@@ -15,7 +14,6 @@ var stores = [
         minCust: 3,
         maxCust: 24,
         perSale: 1.2,
-        perHour: null,
     }, 
     {
         name: 'Seattle Center',
@@ -23,7 +21,6 @@ var stores = [
         minCust: 11,
         maxCust: 38,
         perSale: 3.7,
-        perHour: null,
     },
     {
         name: 'Capitol Hill',
@@ -31,7 +28,6 @@ var stores = [
         minCust: 20,
         maxCust: 38,
         perSale: 2.3,
-        perHour: null,
     },
     {
         name: 'Alki',
@@ -39,7 +35,6 @@ var stores = [
         minCust: 2,
         maxCust: 16,
         perSale: 4.6,
-        perHour: null,
     },
 ];
 
@@ -60,7 +55,7 @@ function addHRArray(storeArray) {
             );
         }
         storeArray[i]['perHour'] = hourArray;
-        
+
     }
 }
 
