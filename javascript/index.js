@@ -38,8 +38,6 @@
         `);
     };
 
-    console.log(cookiesByHour);
-
     var store;
     for(var i = 0; i < stores.length; i++) {
         store = stores[i];
