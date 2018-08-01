@@ -81,16 +81,23 @@
         return grandTotal;
     }
 
+    module.totals = {
+        name: 'Totals',
+        cookieSalesPerStore: totals,
+        dailyStoreTotal: grandTotal
+    };
+    console.log('module.totals:', module.totals);
+    
     var storeTotals = horizontalTotals(stores);
     function horizontalTotals(stores) {
         var storeTotals = 0;
-
+        
         for(var j = 0; j < stores.length; j++) {
             stores[j].dailyStoreTotal = 0;
-
+            
             var salesPerHourPerStoreArray = stores[j].cookieSalesPerStore;
             console.log('horizontal array aka salesPerHourPerStoreArray:', salesPerHourPerStoreArray);
-
+            
             for(var i = 0; i < 14; i++) {
                 stores[j].dailyStoreTotal += salesPerHourPerStoreArray[i];
             }
@@ -104,11 +111,6 @@
 
     console.log('these are store totals', storeTotals);
 
-    module.totals = {
-        name: 'Totals',
-        cookieSalesPerHourTotal: totals,
-        totalHourTotals: grandTotal
-    };
 
     console.log(module.totals);
 

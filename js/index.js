@@ -4,9 +4,10 @@
     var stores = module.stores;
     var toDOM = module.toDOM;
     var html = module.html;
-    //var totals = module.totals;
+    var totals = module.totals;
 
     var table = document.getElementById('stores');
+    var tfooter = document.getElementById('tfoot');
 
     let render = function(store) {
         return toDOM(html`
@@ -31,23 +32,14 @@
         `);
     }; 
 
-
     var store;
     for(var i = 0; i < stores.length; i++) {
         store = stores[i];
-        var dom = render(store);
+        let dom = render(store);
         table.appendChild(dom);
     }
 
-    // var total;
-    // for(let i = 0; i < 14; i++) {
-    //     total = totals[i];
-    //     let dom = render(totals);
-    //     tfoot.appendChild(dom);
-    // }
-
-    
-    
-
+    var totalsRow = render(totals);
+    tfooter.appendChild(totalsRow);
 
 })(window.module = window.module || {});
