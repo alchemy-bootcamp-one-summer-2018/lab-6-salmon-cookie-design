@@ -44,6 +44,8 @@
         {
             name: 'Hourly Totals for All Locations',
             cookiesByHour: [],
+            cookiesPerDay: [],
+
         },
     ];
 
@@ -59,7 +61,7 @@
         for(var i = 0; i < storeArray.length; i++) {
 
             var hourArray = [];
-            for(var hr = 0; hr < 14; hr++) {
+            for(var hr = 0; hr < 13; hr++) {
                 hourArray.push(getRandomHRs(storeArray[i]['custPerHourMin'], storeArray[i]['custPerHourMax']));
             }
             storeArray[i]['custByHour'] = hourArray;
@@ -70,7 +72,7 @@
     function cookiesByHour(storeArray) {
         for(var i = 0; i < storeArray.length; i++) {
             storeArray[i]['cookiesByHour'] = [];
-            for(var hr = 0; hr < 14; hr++) {
+            for(var hr = 0; hr < 13; hr++) {
                 var hrSales = storeArray[i]['custByHour'][hr] * storeArray[i]['cookiesPerCust'];
                 hrSales = hrSales.toPrecision(2);
                 hrSales = parseFloat(hrSales);
@@ -83,31 +85,36 @@
 
         for(var i = 0; i < storeArray.length; i++) {
             var rowSum = 0;
-            for(var hr = 0; hr < 14; hr++) {
+            for(var hr = 0; hr < 13; hr++) {
                 rowSum += storeArray[i]['cookiesByHour'][hr];
             }
             storeArray[i]['cookiesPerDay'] = rowSum;
         }
     }
 
-    function cookiesByHourTotals(storeArray, totalsObj, key) {
+    function cookiesByHourTotals(storeArray, statsArray, statIndex, stat1, stat2) {
         for(var i = 0; i < 13; i++) {
             var columnTotal = 0;
             for(var j = 0; j < storeArray.length; j++) {
                 columnTotal += storeArray[j]['cookiesByHour'][i];
             }
-            totalsObj[key][i] = columnTotal;
+            statsArray[statIndex][stat1][i] = columnTotal;
         }
 
-        // this should be a separate function called cookiesPerDayTotals
+        // this should be a separate function called cookiesPerDayTotals or cookiesByHourTotalsTotal
         var rowSum = 0;
 
         for(var hr = 0; hr < 13; hr++) {
-            rowSum += totalsObj[key][hr];
+            rowSum += statsArray[statIndex][stat1][hr];
         }
-        totalsObj[key].push(rowSum);
+        statsArray[statIndex][stat2].push(rowSum);
 
     }
+
+    custByHour(stores);
+    cookiesByHour(stores);
+    cookiesPerDay(stores);
+    cookiesByHourTotals(stores, stats, 0, 'cookiesByHour', 'cookiesPerDay');
 
 
     module.stores = stores;

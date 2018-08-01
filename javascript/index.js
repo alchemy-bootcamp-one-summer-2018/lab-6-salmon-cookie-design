@@ -27,7 +27,6 @@
                 <td>${row.cookiesByHour[10]}</td>
                 <td>${row.cookiesByHour[11]}</td>
                 <td>${row.cookiesByHour[12]}</td>
-                <td>${row.cookiesByHour[13]}</td>
                 <td class="end-totals" style="background: navy">
                     ${row.cookiesPerDay}
                 </td>
@@ -35,7 +34,7 @@
         `);
     };
 
-    var renderHeader = function () {
+    var renderHeader = function() {
         return toDOM(html`        
             <tr>
                 <th>Locations</th>
@@ -63,10 +62,13 @@
     var tfoot = document.getElementById('stores-tfoot');
 
 
+    
+
     var row;
     function htmlBuilder(containerArray, htmlElement) {
         for(var i = 0; i < containerArray.length; i++) {
             row = containerArray[i];
+            console.log(row);
             var dom = renderBodFoot(row);
             htmlElement.appendChild(dom);
         }
