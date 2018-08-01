@@ -37,8 +37,29 @@
     };
 
 
-    
-    var tbody = document.getElementById('module-table');
+    var thead = document.getElementById('stores-thead');
+    var tbody = document.getElementById('stores-tbody');
+    var tfoot = document.getElementById('stores-tfoot');
+
+    var staticHeader = `
+        <tr>
+            <th>Locations</th>
+            <th>6am</th>
+            <th>7am</th>
+            <th>9am</th>
+            <th>10am</th>
+            <th>11am</th>
+            <th>12pm</th>
+            <th>1pm</th>
+            <th>2pm</th>
+            <th>3pm</th>
+            <th>4pm</th>
+            <th>5pm</th>
+            <th>6pm</th>
+            <th>7pm</th>
+            <th>Location Totals</th>
+        </tr>`;
+    thead.appendChild(staticHeader);
 
     var store;
     for(var i = 0; i < stores.length; i++) {
@@ -54,27 +75,6 @@
 
 
 function storeTableCreator(storeArray, totalsArray) {
-    var theadHTML = `
-                <thead>
-                    <tr>
-                        <th>Locations</th>
-                        <th>6am</th>
-                        <th>7am</th>
-                        <th>9am</th>
-                        <th>10am</th>
-                        <th>11am</th>
-                        <th>12pm</th>
-                        <th>1pm</th>
-                        <th>2pm</th>
-                        <th>3pm</th>
-                        <th>4pm</th>
-                        <th>5pm</th>
-                        <th>6pm</th>
-                        <th>7pm</th>
-                        <th>Location Totals</th>
-                    </tr>
-                </thead>
-                `;
 
     var tbodyHTML = '';
     for (var i = 0; i < storeArray.length; i++) {
@@ -95,23 +95,10 @@ function storeTableCreator(storeArray, totalsArray) {
     }
 
     var tfootHTML = '';
-    tfootHTML += `<tfoot>
-                        <td>Hourly Totals for All Locations</td>
+    { totalsObj['name'] }</td >
 
-        `;
     for (var k = 0; k < 14; k++) {
         tfootHTML += `<td>${totalsArray[k]}</td>`;
     }
-    tfootHTML += `</tfoot>
-    `;
-    var table = `<table>
-                    ${theadHTML} 
-                    ${tbodyHTML} 
-                    ${tfootHTML}
-                </table>`;
-    return table;
+
 }
-
-var storeTable = storeTableCreator(stores, totals['hours']);
-
-document.getElementById('sales-table').innerHTML = storeTable;

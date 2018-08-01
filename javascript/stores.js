@@ -41,7 +41,7 @@
     ];
 
     var totals = {
-        name: 'Totals',
+        name: 'Hourly Totals for All Locations',
         cookiesByHour: [],
     };
 
