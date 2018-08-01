@@ -2,38 +2,58 @@
 
 (function(module){
     var stores = module.stores;
-    var totals = module.totals;
+    var stats = module.stats;
     var toDOM = module.toDOM;
     var html = module.html;
-
-    var cookiesByHour = module.cookiesByHour;
 
 
     // create a function we can call with data,
     // that returns DOM we can append into the 
     // document
-    var render = function(row) {
+    var renderBodFoot = function(row) {
         return toDOM(html`        
-                <tr>
-                    <td>${row.name}</td>
-                    <td>${row.cookiesByHour[0]}</td>
-                    <td>${row.cookiesByHour[1]}</td>
-                    <td>${row.cookiesByHour[2]}</td>
-                    <td>${row.cookiesByHour[3]}</td>
-                    <td>${row.cookiesByHour[4]}</td>
-                    <td>${row.cookiesByHour[5]}</td>
-                    <td>${row.cookiesByHour[6]}</td>
-                    <td>${row.cookiesByHour[7]}</td>
-                    <td>${row.cookiesByHour[8]}</td>
-                    <td>${row.cookiesByHour[9]}</td>
-                    <td>${row.cookiesByHour[10]}</td>
-                    <td>${row.cookiesByHour[11]}</td>
-                    <td>${row.cookiesByHour[12]}</td>
-                    <td>${row.cookiesByHour[13]}</td>
-                    <td class="end-totals" style="background: navy">
-                        ${row.cookiesPerDay}
-                    </td>
-                </tr>
+            <tr>
+                <td>${row.name}</td>
+                <td>${row.cookiesByHour[0]}</td>
+                <td>${row.cookiesByHour[1]}</td>
+                <td>${row.cookiesByHour[2]}</td>
+                <td>${row.cookiesByHour[3]}</td>
+                <td>${row.cookiesByHour[4]}</td>
+                <td>${row.cookiesByHour[5]}</td>
+                <td>${row.cookiesByHour[6]}</td>
+                <td>${row.cookiesByHour[7]}</td>
+                <td>${row.cookiesByHour[8]}</td>
+                <td>${row.cookiesByHour[9]}</td>
+                <td>${row.cookiesByHour[10]}</td>
+                <td>${row.cookiesByHour[11]}</td>
+                <td>${row.cookiesByHour[12]}</td>
+                <td>${row.cookiesByHour[13]}</td>
+                <td class="end-totals" style="background: navy">
+                    ${row.cookiesPerDay}
+                </td>
+            </tr>
+        `);
+    };
+
+    var renderHeader = function () {
+        return toDOM(html`        
+            <tr>
+                <th>Locations</th>
+                <th>6am</th>
+                <th>7am</th>
+                <th>9am</th>
+                <th>10am</th>
+                <th>11am</th>
+                <th>12pm</th>
+                <th>1pm</th>
+                <th>2pm</th>
+                <th>3pm</th>
+                <th>4pm</th>
+                <th>5pm</th>
+                <th>6pm</th>
+                <th>7pm</th>
+                <th>Location Totals</th>
+            </tr>
         `);
     };
 
@@ -42,36 +62,19 @@
     var tbody = document.getElementById('stores-tbody');
     var tfoot = document.getElementById('stores-tfoot');
 
-    var staticHeader = `
-        <tr>
-            <th>Locations</th>
-            <th>6am</th>
-            <th>7am</th>
-            <th>9am</th>
-            <th>10am</th>
-            <th>11am</th>
-            <th>12pm</th>
-            <th>1pm</th>
-            <th>2pm</th>
-            <th>3pm</th>
-            <th>4pm</th>
-            <th>5pm</th>
-            <th>6pm</th>
-            <th>7pm</th>
-            <th>Location Totals</th>
-        </tr>`;
 
     var row;
     function htmlBuilder(containerArray, htmlElement) {
         for(var i = 0; i < containerArray.length; i++) {
             row = containerArray[i];
-            var dom = render(row);
+            var dom = renderBodFoot(row);
             htmlElement.appendChild(dom);
         }
     }
 
-    // rendering to DOM
+    var staticHeader = renderHeader();
     thead.appendChild(staticHeader);
+
     htmlBuilder(stores, tbody);
     htmlBuilder(stats, tfoot);
 

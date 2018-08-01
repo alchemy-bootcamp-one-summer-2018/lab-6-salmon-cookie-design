@@ -1,3 +1,5 @@
+<!-- markdownlint-disable -->
+
 Lab 8: Events and Data Communication
 ===
 

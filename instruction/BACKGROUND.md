@@ -1,3 +1,5 @@
+<!-- markdownlint-disable -->
+
 # About the Problem Domain...
 
 Your friend Pat from Seattle has come up with a business idea by combining two signature Emerald City icons: 
