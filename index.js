@@ -1,38 +1,39 @@
 'use strict';
 
 (function(module){
-    var stores = module.stores;
-    var toDOM = module.toDOM;
-    var html = module.html;
+    let stores = module.stores;
+    let toDOM = module.toDOM;
+    let html = module.html;
 
-    var table = document.getElementById('stores');
+    let table = document.getElementById('stores');
 
-    var render = function(stores) {
+    let render = function(store) {
+        //let store = value that was passed in
         return toDOM(html`        
             <tr>
-                <td>${stores.name}</td>
-                <td>${stores.cookiesSalesPerStore[0]}</td>
-                <td>${stores.cookiesSalesPerStore[1]}</td>
-                <td>${stores.cookiesSalesPerStore[2]}</td>
-                <td>${stores.cookiesSalesPerStore[3]}</td>
-                <td>${stores.cookiesSalesPerStore[4]}</td>
-                <td>${stores.cookiesSalesPerStore[5]}</td>
-                <td>${stores.cookiesSalesPerStore[6]}</td>
-                <td>${stores.cookiesSalesPerStore[7]}</td>
-                <td>${stores.cookiesSalesPerStore[8]}</td>
-                <td>${stores.cookiesSalesPerStore[9]}</td>
-                <td>${stores.cookiesSalesPerStore[10]}</td>
-                <td>${stores.cookiesSalesPerStore[11]}</td>
-                <td>${stores.cookiesSalesPerStore[12]}</td>
-                <td>${stores.cookiesSalesPerStore[13]}</td>
+                <td>${store.name}</td>
+                <td>${store.cookiesSalesPerStore[0]}</td>
+                <td>${store.cookiesSalesPerStore[1]}</td>
+                <td>${store.cookiesSalesPerStore[2]}</td>
+                <td>${store.cookiesSalesPerStore[3]}</td>
+                <td>${store.cookiesSalesPerStore[4]}</td>
+                <td>${store.cookiesSalesPerStore[5]}</td>
+                <td>${store.cookiesSalesPerStore[6]}</td>
+                <td>${store.cookiesSalesPerStore[7]}</td>
+                <td>${store.cookiesSalesPerStore[8]}</td>
+                <td>${store.cookiesSalesPerStore[9]}</td>
+                <td>${store.cookiesSalesPerStore[10]}</td>
+                <td>${store.cookiesSalesPerStore[11]}</td>
+                <td>${store.cookiesSalesPerStore[12]}</td>
+                <td>${store.cookiesSalesPerStore[13]}</td>
             </tr>
         `);
     };
 
-    var store;
-    for(var i = 0; i < stores.length; i++) {
+    let store;
+    for(let i = 0; i < stores.length; i++) {
         store = stores[i];
-        var dom = render(store);
+        let dom = render(store);
         table.appendChild(dom);
     }
 
