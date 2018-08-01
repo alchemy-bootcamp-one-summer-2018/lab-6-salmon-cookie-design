@@ -31,4 +31,10 @@ var libCalc = {
     preciseFloats: function() {
         //take a number, use toPrecision (turning it into a string) and then parseFloat to put it back into a number
     }
-}
+};
+
+var htmlMaker = {
+    storeTableCreator: function () {
+        //make the damn table
+    }
+};
