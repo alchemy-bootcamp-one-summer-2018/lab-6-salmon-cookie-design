@@ -2,9 +2,11 @@
 
 (function(module){
     var stores = module.stores;
-    var totals = module.stores;
+    var totals = module.totals;
     var toDOM = module.toDOM;
     var html = module.html;
+
+    var cookiesByHour = module.cookiesByHour
 
     // reference the ul
     var table = document.getElementById('module-table');
@@ -12,41 +14,37 @@
     // create a function we can call with data,
     // that returns DOM we can append into the 
     // document
-    var render = function(stores, totals) {
+    var render = function(storeObj) {
         return toDOM(html`        
-            <tbody>
                 <tr>
-                    <td>${stores.name}</td>
-                    <td>main cells</td> x 13
-                    <td class="end-totals" 
-                        style="background: navy">
-                        ${stores[i].cookiesPerDay}
-                    </td>    
+                    <td>${storeObj['name']}</td>
+                    <td>${storeObj['cookiesByHour'][0]}</td>
+                    <td>${storeObj['cookiesByHour'][1]}</td>
+                    <td>${storeObj['cookiesByHour'][2]}</td>
+                    <td>${storeObj['cookiesByHour'][3]}</td>
+                    <td>${storeObj['cookiesByHour'][4]}</td>
+                    <td>${storeObj['cookiesByHour'][5]}</td>
+                    <td>${storeObj['cookiesByHour'][6]}</td>
+                    <td>${storeObj['cookiesByHour'][7]}</td>
+                    <td>${storeObj['cookiesByHour'][8]}</td>
+                    <td>${storeObj['cookiesByHour'][9]}</td>
+                    <td>${storeObj['cookiesByHour'][10]}</td>
+                    <td>${storeObj['cookiesByHour'][11]}</td>
+                    <td>${storeObj['cookiesByHour'][12]}</td>
+                    <td>${storeObj['cookiesByHour'][13]}</td>
+                    <td class="end-totals" style="background: navy">
+                        ${storeObj['cookiesPerDay']}
+                    </td>
                 </tr>
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td>Hourly Totals for All Locations</td>
-                    <td style="background: navy">
-                        total cells
-                    </td> x 13
-                    <td class="end-totals" 
-                    style="background: navy">
-                        ${totals.[14]}
-                    </td>    
-                </tr>
-            </tfoot>
         `);
     };
 
-    // loop each fruit
-    var fruit;
-    for(var i = 0; i < fruits.length; i++) {
-        fruit = fruits[i];
-        // make a fruit template instance
-        var dom = render(fruit);
+    console.log(cookiesByHour);
 
-        // append it to the ul
+    var store;
+    for(var i = 0; i < stores.length; i++) {
+        store = stores[i];
+        var dom = render(store);
         table.appendChild(dom);
     }
 
