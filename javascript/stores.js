@@ -4,64 +4,73 @@ var stores = [
     {
         name: 'Pike Place Market',
         key: 'pike',
-        minCust: 23,
-        maxCust: 65,
-        perSale: 6.3,
+        custPerHourMin: 23,
+        custPerHourMax: 65,
+        cookiesPerCust: 6.3,
     },
     {
         name: 'SeaTac Airport',
         key: 'seatac',
-        minCust: 3,
-        maxCust: 24,
-        perSale: 1.2,
+        custPerHourMin: 3,
+        custPerHourMax: 24,
+        cookiesPerCust: 1.2,
     }, 
     {
         name: 'Seattle Center',
         key: 'seattlecenter',
-        minCust: 11,
-        maxCust: 38,
-        perSale: 3.7,
+        custPerHourMin: 11,
+        custPerHourMax: 38,
+        cookiesPerCust: 3.7,
     },
     {
         name: 'Capitol Hill',
         key: 'caphill',
-        minCust: 20,
-        maxCust: 38,
-        perSale: 2.3,
+        custPerHourMin: 20,
+        custPerHourMax: 38,
+        cookiesPerCust: 2.3,
     },
     {
         name: 'Alki',
         key: 'alki',
-        minCust: 2,
-        maxCust: 16,
-        perSale: 4.6,
+        custPerHourMin: 2,
+        custPerHourMax: 16,
+        cookiesPerCust: 4.6,
     },
 ];
 
-function addHRArray(storeArray) {
-    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+function custByHour(storeArray) {
+
     function getRandomHRs(min, max) {
         max = Math.floor(max);
         min = Math.ceil(min);
-        return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+        return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is exclusive and the minimum is inclusive
     }
 
     for(var i = 0; i < storeArray.length; i++){
      
         var hourArray = [];
-        var hourSum = 0;
         for(var hr = 0; hr < 14; hr++){
-            var hrValue = getRandomHRs(storeArray[i]['minCust'], storeArray[i]['maxCust']);
-            hourArray.push(hrValue);
-            hourSum += hrValue;
+            hourArray.push(getRandomHRs(storeArray[i]['custPerHourMin'], storeArray[i]['custPerHourMax']));
         }
-        hourArray.push(hourSum);
-        storeArray[i]['perHour'] = hourArray;
+        storeArray[i]['custByHour'] = hourArray;
 
     }
 }
 
-addHRArray(stores);
+function custPerDay(storeArray) {
+
+    for(var i = 0; i < storeArray.length; i++) {
+        var rowSum = 0;
+        for(var hr = 0; hr < 14; hr++) {
+            rowSum += storeArray[i]['custByHour'][hr];
+        }
+        storeArray[i]['custPerDay'] = rowSum;
+    }
+}
+
+
+custByHour(stores);
+custPerDay(stores);
 
 
 
