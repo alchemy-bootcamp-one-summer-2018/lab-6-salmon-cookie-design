@@ -60,6 +60,7 @@
     }
 
     function cookiesByHour(storeArray) {
+        console.log(storeArray);
         for(let i = 0; i < storeArray.length; i++) {
             storeArray[i]['cookiesByHour'] = [];
             for(let hr = 0; hr < 13; hr++) {
@@ -87,7 +88,6 @@
     cookiesPerDay(stores);
     
     module.stores = stores;
-    module.stats = stats;
     module.custByHour = custByHour;
     module.cookiesByHour = cookiesByHour;
     module.cookiesPerDay = cookiesPerDay;

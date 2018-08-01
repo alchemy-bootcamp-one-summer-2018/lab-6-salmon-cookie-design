@@ -56,13 +56,9 @@
         `);
     };
 
-
     let thead = document.getElementById('stores-thead');
     let tbody = document.getElementById('stores-tbody');
     let tfoot = document.getElementById('stores-tfoot');
-
-
-    
 
     let row;
     function htmlBuilder(containerArray, htmlElement) {

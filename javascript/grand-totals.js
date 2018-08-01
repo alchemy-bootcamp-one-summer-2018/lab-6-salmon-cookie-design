@@ -6,6 +6,8 @@
 
 (function(module) {
 
+    let stores = module.stores;
+
 
     let stats = [
         {
@@ -38,6 +40,7 @@
 
     cookiesByHourTotals(stores, stats, 0, 'cookiesByHour', 'cookiesPerDay');
     module.cookiesByHourTotals = cookiesByHourTotals;
+    module.stats = stats;
 
 })(window.module = window.module || {});
 
