@@ -2,6 +2,7 @@
 
 
 // This is what I should've done to start the lab...
+// OMG, we even did a lab on making arithmetic libs...
 
 
 var tableCalc = {
@@ -33,11 +34,20 @@ var libCalc = {
     },
     preciseFloats: function() {
         //take a number, use toPrecision (turning it into a string) and then parseFloat to put it back into a number
-    }
+    },
 };
 
 var htmlMaker = {
     storeTableCreator: function () {
         //make the damn table
-    }
+        // components:
+        //   -add parent tags
+        //   -iterate siblings
+    },
+    addParentTags: function(parenttag, childstring, styling) {
+        // ex: put <tr> around <td>
+    },
+    iterateSiblingTags: function() {
+        // ex: create a string with a bunch of one type of tag
+    },
 };
