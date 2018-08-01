@@ -5,7 +5,7 @@
     var toDOM = module.toDOM;
     var html = module.html;
 
-    var cookiesByHour = module.cookiesByHour
+    var cookiesByHour = module.cookiesByHour;
 
     // reference the ul
     var table = document.getElementById('module-table');

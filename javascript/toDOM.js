@@ -2,7 +2,7 @@
 
 'use strict';
 
-(function (module) {
+(function(module) {
 
     function toDOM(html) {
         // create a template element

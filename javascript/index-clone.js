@@ -1,6 +1,6 @@
 'use strict';
 
-(function (module) {
+(function(module) {
     var fruits = module.fruits;
 
     // reference the ul
@@ -11,7 +11,7 @@
 
     // loop each fruit
     var fruit;
-    for (var i = 0; i < fruits.length; i++) {
+    for(var i = 0; i < fruits.length; i++) {
         fruit = fruits[i];
 
         // make a "li" that has this fruit's data
