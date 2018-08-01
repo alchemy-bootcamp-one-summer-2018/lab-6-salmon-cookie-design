@@ -5,8 +5,11 @@
 
 
 var tableCalc = {
-    sumRow: function() {
-        //sum the row
+    sumRow: function (array, key1, key2) {
+        // sum the row
+        // array will be objectArray['objectKey']
+        // key1 will be key for an array with values to sum
+        // key2 will be key for a place to put the sum (either the same object or a different object)
     },
     sumCol: function() {
         //sum the column
