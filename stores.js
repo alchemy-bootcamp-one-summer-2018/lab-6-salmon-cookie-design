@@ -74,16 +74,28 @@
         return grandTotal;
     }
 
-    var storeTotals = horizontalTotals(stores[j].cookieSalesPerStore);
+    var storeTotals = horizontalTotals(stores);
     function horizontalTotals(stores) {
         var storeTotals = 0;
-        for(var j = 0; j < 14; j++) {
-            storeTotals = storeTotals + stores[j].cookieSalesPerStore;
-        }
-        storeTotals.push(storeTotals);
-    }
-    console.log('these are store totals', storeTotals);
+        
+        for(var j = 0; j < stores.length; j++) {
+            stores[j].dailyStoreTotal = 0;
 
+            var salesPerStorePerHourArray = stores[j].cookiesSalesPerStore;
+            console.log('Store Total Array:', salesPerStorePerHourArray);
+
+            for(var i = 0; i < 14; i++) {
+                stores[j].dailyStoreTotal += salesPerStorePerHourArray[i];
+
+            }
+
+            storeTotals = storeTotals + stores[j].cookiesSalesPerStore[j];
+            console.log('daily store totals:', stores[j].dailyStoreTotal);
+
+        }
+
+    }
+    
     module.totals = {
         name: 'Totals',
         cookieSalesPerHourTotal: totals,
@@ -91,5 +103,5 @@
     };
     console.log(module.totals);
 
-    
+
 })(window.module = window.module || {});

@@ -4,6 +4,7 @@
     let stores = module.stores;
     let toDOM = module.toDOM;
     let html = module.html;
+    let totals = module.totals;
 
     let table = document.getElementById('stores');
 
@@ -26,6 +27,7 @@
                 <td>${store.cookiesSalesPerStore[11]}</td>
                 <td>${store.cookiesSalesPerStore[12]}</td>
                 <td>${store.cookiesSalesPerStore[13]}</td>
+                <td class="totals">${store.dailyStoreTotal}</td>
             </tr>
         `);
     };
