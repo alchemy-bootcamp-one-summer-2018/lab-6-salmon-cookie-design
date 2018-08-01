@@ -49,17 +49,20 @@ function addHRArray(storeArray) {
     for(var i = 0; i < storeArray.length; i++){
      
         var hourArray = [];
+        var hourSum = 0;
         for(var hr = 0; hr < 14; hr++){
-            hourArray.push(
-                getRandomHRs(storeArray[i]['minCust'], storeArray[i]['maxCust'])
-            );
+            var hrValue = getRandomHRs(storeArray[i]['minCust'], storeArray[i]['maxCust']);
+            hourArray.push(hrValue);
+            hourSum += hrValue;
         }
+        hourArray.push(hourSum);
         storeArray[i]['perHour'] = hourArray;
 
     }
 }
 
 addHRArray(stores);
+
 
 
 
