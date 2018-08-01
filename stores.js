@@ -49,7 +49,47 @@
     }
         
     console.log('stores array:', stores);
+    module.stores = stores;
 
     module.stores = stores;
-        
+    
+    var totals = [];
+    for(let i = 0; i < 14; i++) {
+        var total = 0;
+
+        for(let j = 0; j < stores.length; j++) {
+            total += stores[j].cookiesSalesPerStore[i];
+        }
+
+        totals.push(total);
+    }
+
+    var grandTotal = totally(totals);
+
+    function totally(totals) {
+        var grandTotal = 0;
+        for(var j = 0; j < 14; j++) {
+            grandTotal += totals[j];
+        } 
+        return grandTotal;
+    }
+
+    var storeTotals = horizontalTotals(stores[j].cookieSalesPerStore);
+    function horizontalTotals(stores) {
+        var storeTotals = 0;
+        for(var j = 0; j < 14; j++) {
+            storeTotals = storeTotals + stores[j].cookieSalesPerStore;
+        }
+        storeTotals.push(storeTotals);
+    }
+    console.log('these are store totals', storeTotals);
+
+    module.totals = {
+        name: 'Totals',
+        cookieSalesPerHourTotal: totals,
+        totalHourTotals: grandTotal
+    };
+    console.log(module.totals);
+
+    
 })(window.module = window.module || {});
