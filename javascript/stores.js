@@ -40,10 +40,10 @@
         },
     ];
 
-    var totals = {
+    var stats = [{
         name: 'Hourly Totals for All Locations',
         cookiesByHour: [],
-    };
+    },];
 
 
     function custByHour(storeArray) {

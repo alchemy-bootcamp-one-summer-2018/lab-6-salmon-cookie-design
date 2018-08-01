@@ -2,6 +2,7 @@
 
 (function(module){
     var stores = module.stores;
+    var totals = module.totals;
     var toDOM = module.toDOM;
     var html = module.html;
 
@@ -11,26 +12,26 @@
     // create a function we can call with data,
     // that returns DOM we can append into the 
     // document
-    var render = function(storeObj) {
+    var render = function(row) {
         return toDOM(html`        
                 <tr>
-                    <td>${storeObj.name}</td>
-                    <td>${storeObj.cookiesByHour[0]}</td>
-                    <td>${storeObj.cookiesByHour[1]}</td>
-                    <td>${storeObj.cookiesByHour[2]}</td>
-                    <td>${storeObj.cookiesByHour[3]}</td>
-                    <td>${storeObj.cookiesByHour[4]}</td>
-                    <td>${storeObj.cookiesByHour[5]}</td>
-                    <td>${storeObj.cookiesByHour[6]}</td>
-                    <td>${storeObj.cookiesByHour[7]}</td>
-                    <td>${storeObj.cookiesByHour[8]}</td>
-                    <td>${storeObj.cookiesByHour[9]}</td>
-                    <td>${storeObj.cookiesByHour[10]}</td>
-                    <td>${storeObj.cookiesByHour[11]}</td>
-                    <td>${storeObj.cookiesByHour[12]}</td>
-                    <td>${storeObj.cookiesByHour[13]}</td>
+                    <td>${row.name}</td>
+                    <td>${row.cookiesByHour[0]}</td>
+                    <td>${row.cookiesByHour[1]}</td>
+                    <td>${row.cookiesByHour[2]}</td>
+                    <td>${row.cookiesByHour[3]}</td>
+                    <td>${row.cookiesByHour[4]}</td>
+                    <td>${row.cookiesByHour[5]}</td>
+                    <td>${row.cookiesByHour[6]}</td>
+                    <td>${row.cookiesByHour[7]}</td>
+                    <td>${row.cookiesByHour[8]}</td>
+                    <td>${row.cookiesByHour[9]}</td>
+                    <td>${row.cookiesByHour[10]}</td>
+                    <td>${row.cookiesByHour[11]}</td>
+                    <td>${row.cookiesByHour[12]}</td>
+                    <td>${row.cookiesByHour[13]}</td>
                     <td class="end-totals" style="background: navy">
-                        ${storeObj['cookiesPerDay']}
+                        ${row.cookiesPerDay}
                     </td>
                 </tr>
         `);
@@ -59,14 +60,22 @@
             <th>7pm</th>
             <th>Location Totals</th>
         </tr>`;
-    thead.appendChild(staticHeader);
 
-    var store;
-    for(var i = 0; i < stores.length; i++) {
-        store = stores[i];
-        var dom = render(store);
-        tbody.appendChild(dom);
+    var row;
+    function htmlBuilder(containerArray, htmlElement) {
+        for(var i = 0; i < containerArray.length; i++) {
+            row = containerArray[i];
+            var dom = render(row);
+            htmlElement.appendChild(dom);
+        }
     }
+
+    // rendering to DOM
+    thead.appendChild(staticHeader);
+    htmlBuilder(stores, tbody);
+    htmlBuilder(stats, tfoot);
+
+
 
 })(window.module = window.module || {});
 
@@ -74,31 +83,31 @@
 
 
 
-function storeTableCreator(storeArray, totalsArray) {
+// function storeTableCreator(storeArray, totalsArray) {
 
-    var tbodyHTML = '';
-    for (var i = 0; i < storeArray.length; i++) {
-        var rowHTML = '';
-        rowHTML += `<tr>
-        `;
-        rowHTML += `<td>${storeArray[i]['name']}</td>
-        `;
-        for (var j = 0; j < 13; j++) {
-            rowHTML += `<td>${storeArray[i]['cookiesByHour'][j]}</td>
-        `;
-        }
-        rowHTML += `<td>${storeArray[i]['cookiesPerDay']}</td>
-        `;
-        rowHTML += `</tr>
-        `;
-        tbodyHTML += rowHTML;
-    }
+//     var tbodyHTML = '';
+//     for (var i = 0; i < storeArray.length; i++) {
+//         var rowHTML = '';
+//         rowHTML += `<tr>
+//         `;
+//         rowHTML += `<td>${storeArray[i]['name']}</td>
+//         `;
+//         for (var j = 0; j < 13; j++) {
+//             rowHTML += `<td>${storeArray[i]['cookiesByHour'][j]}</td>
+//         `;
+//         }
+//         rowHTML += `<td>${storeArray[i]['cookiesPerDay']}</td>
+//         `;
+//         rowHTML += `</tr>
+//         `;
+//         tbodyHTML += rowHTML;
+//     }
 
-    var tfootHTML = '';
-    { totalsObj['name'] }</td >
+//     var tfootHTML = '';
+//     { totalsObj['name'] }</td >
 
-    for (var k = 0; k < 14; k++) {
-        tfootHTML += `<td>${totalsArray[k]}</td>`;
-    }
+//     for (var k = 0; k < 14; k++) {
+//         tfootHTML += `<td>${totalsArray[k]}</td>`;
+//     }
 
-}
+// }
