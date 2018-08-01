@@ -1,16 +1,18 @@
 'use strict';
 
 (function(module){
-    var stores = module.stores;
-    var toDOM = module.toDOM;
-    var html = module.html;
-    // reference the ul
-    var tBody = document.getElementById('stores-table');
+    let stores = module.stores;
+    let toDOM = module.toDOM;
+    let html = module.html;
+    let totalsPerHour = module.totalsPerHour;
+    // reference the td
+    let tBody = document.getElementById('stores-table-body');
+    let tFoot = document.getElementById('stores-table-foot');
 
     // create a function we can call with data,
     // that returns DOM we can append into the 
     // document
-    var render = function(store) {
+    let render = function(store) {
         return toDOM(html`
         <tr>
             <td>${store.name}</td>
@@ -28,15 +30,20 @@
             <td>${store.cookiesSalesPerHour[11]}</td>
             <td>${store.cookiesSalesPerHour[12]}</td>
             <td>${store.cookiesSalesPerHour[13]}</td>
+            <td class="location-totals">${store.storeTotals}</td>
         </tr>`);
     };
     
     // loop each store
-    var store;
-    for(var i = 0; i < stores.length; i++) {
+    let store;
+    for(let i = 0; i < stores.length; i++) {
         store = stores[i];
-        var dom = render(store);
+        let dom = render(store);
         tBody.appendChild(dom);
     }
+
+    let dom = render(totalsPerHour);
+
+    tFoot.appendChild(dom);
 
 })(window.module = window.module || {});

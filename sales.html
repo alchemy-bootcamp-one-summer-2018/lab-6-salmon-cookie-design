@@ -12,18 +12,21 @@
          <a href="index.html"><image id="salmon" src="salmon.png"/></a>
     </div>
     <h1 id="main-header">Pat's Salmon Cookie Co.</h1>
-    
-    <p class="headers">Location Name</p>
-    <input type="text">
-    <p class="headers">Minimum Customers Per Hour</p>
-    <input type="text">
-    <p class="headers">Maximum Customers Per Hour</p>
-    <input type="text">
-    <p class="headers">Average Cookies Per Sale</p>
-    <input type="text">
-    <div id="submit-button">
-        <button type="submit">Click Here To Add!</button>
-    </div>
+
+    <form id="add-store">
+        <p class="headers">Location Name</p>
+        <input type="text">
+        <p class="headers">Minimum Customers Per Hour</p>
+        <input type="text">
+        <p class="headers">Maximum Customers Per Hour</p>
+        <input type="text">
+        <p class="headers">Average Cookies Per Sale</p>
+        <input type="text">
+        <div id="submit-button">
+            <button id="form-button">Click Here To Add!</button>
+        </div>
+    </form>
+
     <table>
         <thead class="location-totals">
             <tr>
@@ -46,46 +49,9 @@
             </tr>
         </thead>
 
-            <tbody id="stores-table">
-                <template>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </template>
+            <tbody id="stores-table-body">
             </tbody>
-        <tfoot class="location-totals">
-            <tr>
-                <td>Hourly Totals for All Locations</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-            </tr>
+        <tfoot id="stores-table-foot" class="location-totals">
         </tfoot>
     </table>
     <script src="js/toDom.js"></script>
