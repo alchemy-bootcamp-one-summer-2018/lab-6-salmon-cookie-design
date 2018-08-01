@@ -98,8 +98,8 @@
     
     module.totals = {
         name: 'Totals',
-        cookieSalesPerHourTotal: totals,
-        totalHourTotals: grandTotal
+        cookiesSalesPerStore: totals,
+        dailyStoreTotal: grandTotal
     };
     console.log(module.totals);
 

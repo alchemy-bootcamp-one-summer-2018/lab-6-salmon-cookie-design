@@ -7,6 +7,7 @@
     let totals = module.totals;
 
     let table = document.getElementById('stores');
+    let tfooter = document.getElementById('tfoot');
 
     let render = function(store) {
         //let store = value that was passed in
@@ -38,5 +39,9 @@
         let dom = render(store);
         table.appendChild(dom);
     }
+    
+    var totalsRow = render(totals);
+    tfooter.appendChild(totalsRow);
+    
 
 })(window.module = window.module || {});
