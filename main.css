@@ -18,7 +18,7 @@ table, th, td {
     text-align: center;
 }
 
-td {
+tbody {
     background: #FAC9B8;
     font-family: 'Indie Flower', sans-serif;
 }

@@ -1,49 +1,13 @@
 'use strict';
 (function(module) {
     var stores = {
-        'Pike Place': { location: 'Pike Place', min_cust: 10, max_cust: 40, avg_cookies: 10 },
+        'pikePlace': { location: 'Pike Place', min_cust: 10, max_cust: 40, avg_cookies: 10 },
         'SeaTac': { location: 'SeaTac', min_cust: 1, max_cust: 5, avg_cookies: 6 },
         'Seattle Center': { location: 'Seattle Center', min_cust: 50, max_cust: 100, avg_cookies: 1 },
         'Capitol Hill': { location: 'Capitol Hill', min_cust: 40, max_cust: 80, avg_cookies: 2 },
         'Alki': { location: 'Alki', min_cust: 5, max_cust: 25, avg_cookies: 3 }
     };
     
-    //[
-        // {
-        //     location: 'Pikes Place Market',
-        //     min: 23,
-        //     max: 65,
-        //     avg: 6.3,
-        //     key: 'pike'
-        // }, {
-        //     location: 'SeaTac Airport',
-        //     min: 3,
-        //     max: 24,
-        //     avg: 1.2,
-        //     key: 'seatac'
-        // }, 
-        //     'Seattle Center': {
-        //     location: 'Seattle Center',
-        //     min: 11,
-        //     max: 38,
-        //     avg: 3.7,
-        // }, {
-        //     location: 'Capitol Hill',
-        //     min: 20,
-        //     max: 38,
-        //     avg: 2.3,
-        //     key: 'caphill'
-        // }, {
-        //     location: 'Alki',
-        //     min: 2,
-        //     max: 16,
-        //     avg: 4.6,
-        //     key: 'alki'
-        // }];
-
-        
-  
-        
     function getRandInteger(min, max) {
         return Math.floor(Math.random() * (max - min) + min);
     }
@@ -59,12 +23,6 @@
             stores[locations[j]]['hours'].push(cookies);
         }
     }
-    // for(var i = 0; i < hours.length; i++) {
-    //     stores[]
-    //     var random = generateRandomCustomers(stores[i].min, stores[i].max);
-    //     randomCustomers.push(random);
-    // }
-    // console.log('random customers', randomCustomers);
     console.log(stores);
         
     module.stores = stores;
