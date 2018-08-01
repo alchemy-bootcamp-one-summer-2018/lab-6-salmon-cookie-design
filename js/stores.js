@@ -62,17 +62,23 @@
         stores[i].storeTotals.push(storeTotal);
     }
 
-    // for(var i = 0; i < 14; i++) {
-    //     totals = [];
-    //     var total = 0;
-    //     for(var j = 0; j < store.length; j++) {
-    //         total += stores[j].macaronsPerHour[i];
-
-    //     }
-    //     stores[i].storeTotals.push(storeTotal);
-    // }
-
     module.stores = stores;
+    
+    var totals = [];
+    for(var i = 0; i < 14; i++) {
+        var total = 0;
+
+        for(var j = 0; j < stores.length; j++) {
+            total += stores[j].macaronsPerHour[i];
+        }
+        totals.push(total);
+    }
+
+    module.totals = {
+        name: 'totals',
+        macaronsPerHour: totals
+    };
+    console.log(module.totals);
 
 })(window.module = window.module || {});
 
