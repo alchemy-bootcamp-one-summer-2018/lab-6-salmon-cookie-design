@@ -4,27 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="css/main.css">
     <title>Pat's Salmon Cookie Co. Sales</title>
 </head>
 <body>
     <div id="salmon-logo">
-         <a href="index.html"><image id="salmon" src="salmon.png"/></a>
+         <a href="index.html"><image id="salmon" src="images/salmon.png"/></a>
     </div>
     <h1 id="main-header">Pat's Salmon Cookie Co.</h1>
 
     <form id="add-store">
         <p class="headers">Location Name</p>
-        <input type="text">
+        <input name="location name" type="text" required><sup>*</sup>
         <p class="headers">Minimum Customers Per Hour</p>
-        <input type="text">
+        <input name="minimum customers per hour" type="text" required><sup>*</sup>
         <p class="headers">Maximum Customers Per Hour</p>
-        <input type="text">
+        <input name="maximum customers per hour" type="text" required><sup>*</sup>
         <p class="headers">Average Cookies Per Sale</p>
-        <input type="text">
+        <input name="average cookies per sale" type="text" required><sup>*</sup>
+
         <div id="submit-button">
             <button id="form-button">Click Here To Add!</button>
         </div>
+
+        <p id="form-error" class="error"></p>
     </form>
 
     <table>
@@ -56,6 +59,9 @@
     </table>
     <script src="js/toDom.js"></script>
     <script src="js/stores.js"></script>
+    <script src="js/store-table.js"></script>
+    <script src="js/grand-totals.js"></script>
+    <script src="js/store-form.js"></script>
     <script src="js/index.js"></script>
 </body>
 </html>
