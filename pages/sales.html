@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="/css/main.css" type="text/css">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/salmon-icon.png" />
+    <title>Salmon Industries - Sales</title>
+</head>
+
+
+<body>
+
+    <header class="header-container">
+        <a class="logo-container" href="/index.html" title="Salmon Industries - Home">
+            <img src="/images/salmon.png" width="180">
+            <h1 class="head-title">Salmon Industries</h1>
+        </a>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/index.html" title="Home">Home</a>
+                </li>
+                <li>
+                    <a class="active" href="/pages/sales.html" title="Sales">Sales</a>
+                </li>
+                <li>
+                    <a href="/pages/products.html" title="Product Gallery">Product Gallery</a>
+                </li>
+                <li>
+                    <a href="/pages/about.html" title="Our story">Our Story</a>
+                </li>
+                <li>
+                    <a href="/pages/contact.html" title="Contact">Contact</a>
+                </li>
+            </ul>
+        </nav>
+
+        <p class="core-info">
+            <br> 12345 Main St
+            <br> Portland, OR 97220
+            <br> 12:02am - 11:58pm
+            <br> (877) GET - FISH
+            <br>
+            <a style="color: rgba(239, 132, 105, 1);" href="https://www.youtube.com/watch?v=i9SSOWORzw4">somethingisfishy@aol.com</a>
+        </p>
+    </header>
+
+    <main>
+
+      
+        <h2>Add a Store</h2>
+            
+        <section class="store-grid">
+            
+            <div class="store-form">
+                <form>
+                    <fieldset>
+                        <legend>Add a new store to the table</legend>
+                
+                        <p class="question">Location Name</p>
+                        <input class="text" type="text" name="locationName" placeholder="Enter location" required/>
+                
+                        <p class="question">Minimum Customers Per Hour</p>
+                        <input class="text" type="text" name="minCustomers" placeholder="Enter minimum customers" required/>
+                
+                        <p class="question">Maximum Customers Per Hour</p>
+                        <input class="text" type="text" name="maxCustomers" placeholder="Enter maximum customers" required/>
+                
+                        <p class="question">Average Cookies Per Sale</p>
+                        <input class="text" type="text" name="avgSale" placeholder="Enter average cookies per sale" required/>
+                    </fieldset>
+                
+                    <div>
+                        <button id="sales-submit" type="submit">Add Store</button>
+                        <button id="sales-reset" type="reset">Start Over</button>
+                    </div>   
+                </form>
+            </div>
+        
+            <div class="store-table">
+                <h2>Locations vs Sales Totals</h2>
+                
+                <table id="stores-table">
+                    <thead id="stores-thead"></thead>
+                    <tbody id="stores-tbody"></tbody>
+                    <tfoot id="stores-tfoot"></tfoot>
+                </table>
+
+            </div>
+
+        </section>
+        
+        
+
+
+
+
+    </main>
+
+    <footer>
+        <img src="/images/salmon-icon.png" width="72">
+        <p> &copy; 2018 Salmon Industries - All Rights Reserved</p>
+    </footer>
+
+
+ 
+
+    <script src="/javascript/stores.js"></script>
+    <script src="/javascript/toDOM.js"></script>
+    <script src="/javascript/index.js"></script>
+
+</body>
+
+</html>
