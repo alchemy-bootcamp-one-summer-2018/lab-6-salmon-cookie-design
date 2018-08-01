@@ -6,9 +6,11 @@
     var html = module.html;
     var totals = module.totals;
 
+
+
     var table = document.getElementById('table-body');
 
-    var render = function(stores) {
+    var render = function(store) {
         return toDOM(html`        
             <tr>
                 <td>${store.name}</td>
@@ -35,14 +37,17 @@
     for(var i = 0; i < (stores.length); i++) {
         store = stores[i];
 
-        var dom = render(stores);
+        var dom = render(store);
 
         table.appendChild(dom);
     }
 
 
+    var footer = document.getElementById('table-foot');
+        
+    var dom = render(totals);
 
-    // var table = document.getElementById('table-foot');
+    footer.appendChild(dom);
 
     // var render = function(totals) {
     //     return toDOM(html`        

@@ -55,10 +55,7 @@
 
     for(var i = 0; i < stores.length; i++) {
         stores[i].storeTotals = [];
-        var storeTotal = 0;
-        for(var j = 0; j < 14; j++) {
-            storeTotal += stores[i].macaronsPerHour[j];
-        }
+        var storeTotal = totally(stores[i].macaronsPerHour);
         stores[i].storeTotals.push(storeTotal);
     }
 
@@ -74,13 +71,22 @@
         totals.push(total);
     }
 
+    var grandTotal = totally(totals);
+
+    function totally (totals) {
+        var grandTotal = 0;
+        for(var j = 0; j < 14; j++) {
+            grandTotal += totals[j];
+        } 
+        return grandTotal;
+    }
+    
     module.totals = {
         name: 'Totals',
-        macaronsPerHour: totals
+        macaronsPerHour: totals,
+        storeTotals: grandTotal
     };
     console.log(module.totals);
-
-    stores.push(module.totals);
 
 })(window.module = window.module || {});
 
