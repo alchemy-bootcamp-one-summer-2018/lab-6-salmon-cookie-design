@@ -75,10 +75,12 @@
     }
 
     module.totals = {
-        name: 'totals',
+        name: 'Totals',
         macaronsPerHour: totals
     };
     console.log(module.totals);
+
+    stores.push(module.totals);
 
 })(window.module = window.module || {});
 

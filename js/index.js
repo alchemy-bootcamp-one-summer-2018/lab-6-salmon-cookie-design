@@ -6,7 +6,7 @@
     var html = module.html;
     var totals = module.totals;
 
-    var ul = document.getElementById('table-body');
+    var table = document.getElementById('table-body');
 
     var render = function(stores) {
         return toDOM(html`        
@@ -32,47 +32,49 @@
     };
 
     var store;
-    for(var i = 0; i < stores.length; i++) {
+    for(var i = 0; i < (stores.length); i++) {
         store = stores[i];
 
         var dom = render(stores);
 
-        ul.appendChild(dom);
+        table.appendChild(dom);
     }
 
-//     var ul = document.getElementById('table-body');
 
-//     var render = function(totals) {
-//         return toDOM(html`        
-//             <tr>
-//                 <td>${total.name}</td>
-//                 <td>${total.hourTotals[0]}</td>
-//                 <td>${total.hourTotals[1]}</td>
-//                 <td>${total.hourTotals[2]}</td>
-//                 <td>${total.hourTotals[3]}</td>
-//                 <td>${total.hourTotals[4]}</td>
-//                 <td>${total.hourTotals[5]}</td>
-//                 <td>${total.hourTotals[6]}</td>
-//                 <td>${total.hourTotals[7]}</td>
-//                 <td>${total.hourTotals[8]}</td>
-//                 <td>${total.hourTotals[9]}</td>
-//                 <td>${total.hourTotals[10]}</td>
-//                 <td>${total.hourTotals[11]}</td>
-//                 <td>${total.hourTotals[12]}</td>
-//                 <td>${total.hourTotals[13]}</td>
-//                 <td class="totals">${}</td>
-//             </tr>
-//         `);
-//     };
 
-//     var total;
-//     for(var i = 0; i < totals.length; i++) {
-//         total = totals[i];
+    // var table = document.getElementById('table-foot');
 
-//         var dom = render(totals);
+    // var render = function(totals) {
+    //     return toDOM(html`        
+    //         <tr>
+    //             <td>${total.name}</td>
+    //             <td>${total.macaronsPerHour[0]}</td>
+    //             <td>${total.macaronsPerHour[1]}</td>
+    //             <td>${total.macaronsPerHour[2]}</td>
+    //             <td>${total.macaronsPerHour[3]}</td>
+    //             <td>${total.macaronsPerHour[4]}</td>
+    //             <td>${total.macaronsPerHour[5]}</td>
+    //             <td>${total.macaronsPerHour[6]}</td>
+    //             <td>${total.macaronsPerHour[7]}</td>
+    //             <td>${total.macaronsPerHour[8]}</td>
+    //             <td>${total.macaronsPerHour[9]}</td>
+    //             <td>${total.macaronsPerHour[10]}</td>
+    //             <td>${total.macaronsPerHour[11]}</td>
+    //             <td>${total.macaronsPerHour[12]}</td>
+    //             <td>${total.macaronsPerHour[13]}</td>
+    //             <td class="totals">${tbd}</td>
+    //         </tr>
+    //     `);
+    // };
 
-//         ul.appendChild(dom);
-//     }
+    // var total;
+    // for(var i = 0; i < totals.length; i++) {
+    //     total = totals[i];
+
+    //     var dom = render(totals);
+
+    //     table.appendChild(dom);
+    // }
 
 //     <tr>
 //     <td>Hourly Totals for All Locations</td>
