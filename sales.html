@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="main.css">
+    <title>Pat's Salmon Cookie Co. Sales</title>
+</head>
+<body>
+    <div id="salmon-logo">
+         <a href="index.html"><image id="salmon" src="salmon.png"/></a>
+    </div>
+    <h1 id="main-header">Pat's Salmon Cookie Co.</h1>
+
+    <form id="add-store">
+        <p class="headers">Location Name</p>
+        <input type="text">
+        <p class="headers">Minimum Customers Per Hour</p>
+        <input type="text">
+        <p class="headers">Maximum Customers Per Hour</p>
+        <input type="text">
+        <p class="headers">Average Cookies Per Sale</p>
+        <input type="text">
+        <div id="submit-button">
+            <button id="form-button">Click Here To Add!</button>
+        </div>
+    </form>
+
+    <table>
+        <thead class="location-totals">
+            <tr>
+                <th>Locations</th>
+                <th>6am</th>
+                <th>7am</th>
+                <th>8am</th>
+                <th>9am</th>
+                <th>10am</th>
+                <th>11am</th>
+                <th>12pm</th>
+                <th>1pm</th>
+                <th>2pm</th>
+                <th>3pm</th>
+                <th>4pm</th>
+                <th>5pm</th>
+                <th>6pm</th>
+                <th>7pm</th>
+                <th>Location Totals</th>
+            </tr>
+        </thead>
+
+            <tbody id="stores-table-body">
+            </tbody>
+        <tfoot id="stores-table-foot" class="location-totals">
+        </tfoot>
+    </table>
+    <script src="js/toDom.js"></script>
+    <script src="js/stores.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
