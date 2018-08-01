@@ -1,3 +1,5 @@
+/* globals stores, totals */
+
 'use strict';
 
 (function(module) {
@@ -17,3 +19,30 @@
 
 })(window.module = window.module || {});
 
+
+
+
+
+function storeRowCreator(storeArray, totalsArray) {
+    var tbodyHTML = '';
+    for(var i; i < storeArray.length; i++){
+        var rowHTML = '';
+        rowHTML += `<tr>
+`           ;
+        rowHTML += `<td>${storeArray[i]['name']}</td>
+`           ;
+        for(var j = 0; j < 14; i++){
+            rowHTML += `<td>${storeArray[i]['cookiesByHour'][j]}</td>
+`           ;
+        }
+        rowHTML += `<td>${storeArray[i]['cookiesPerDay']}</td>
+`           ;
+        rowHTML += `</tr>
+`           ;
+        tbodyHTML += rowHTML;
+    }
+    return tbodyHTML;
+}
+    
+var storeRows = storeRowCreator(stores, totals['hours']);
+storeRows;
