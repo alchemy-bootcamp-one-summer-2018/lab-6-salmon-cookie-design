@@ -2,13 +2,13 @@
 
 'use strict';
 
-(function (module) {
+(function(module) {
 
     function initStoreForm(onStoreAdded) {
         
         
     }
 
-    module.initStoreForm(onStoreAdded) = initStoreForm(onStoreAdded);
+    module.initStoreForm = initStoreForm;
 
 })(window.module = window.module || {});
