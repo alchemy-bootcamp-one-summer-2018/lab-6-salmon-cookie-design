@@ -57,6 +57,8 @@ function custByHour(storeArray) {
     }
 }
 
+/* Unnecessary but saving in case this is useful later */
+/* eslint-disable-next-line */
 function custPerDay(storeArray) {
 
     for(var i = 0; i < storeArray.length; i++) {
@@ -68,10 +70,18 @@ function custPerDay(storeArray) {
     }
 }
 
+function cookiesPerHour(storeArray) {
+    for(var i = 0; i < storeArray.length; i++){
+        storeArray[i]['cookiesPerHour'] = [];
+        for(var hr = 0; hr < 14; hr++) {
+            var hrSales = storeArray[i]['custByHour'][hr] * storeArray[i]['cookiesPerCust'];
+            storeArray[i]['cookiesPerHour'][hr] = hrSales.toPrecision(2);
+        }
+    }
+}
 
 custByHour(stores);
-custPerDay(stores);
-
+cookiesPerHour(stores);
 
 
 
