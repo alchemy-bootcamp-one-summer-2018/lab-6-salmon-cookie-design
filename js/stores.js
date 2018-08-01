@@ -35,9 +35,9 @@
     }];
 
     
-    for(var i = 0; i < stores.length; i++) {
+    for(let i = 0; i < stores.length; i++) {
         stores[i].customers = [];
-        for(var j = 0; j < 14; j++) {
+        for(let j = 0; j < 14; j++) {
             var min = Math.ceil(parseInt(stores[i].min));
             var max = Math.floor(parseInt(stores[i].max));
             var customersThisHour = Math.floor(Math.random() * (max - min)) + min;
@@ -45,15 +45,15 @@
         }
     }
 
-    for(var i = 0; i < stores.length; i++) {
+    for(let i = 0; i < stores.length; i++) {
         stores[i].macaronsPerHour = [];
-        for(var j = 0; j < 14; j++) {
+        for(let j = 0; j < 14; j++) {
             var macaronsThisHour = Math.ceil((parseFloat(stores[i].customers[j])) * (parseFloat(stores[i].avg)));
             stores[i].macaronsPerHour.push(macaronsThisHour);
         }
     }
 
-    for(var i = 0; i < stores.length; i++) {
+    for(let i = 0; i < stores.length; i++) {
         stores[i].storeTotals = [];
         var storeTotal = totally(stores[i].macaronsPerHour);
         stores[i].storeTotals.push(storeTotal);
@@ -73,7 +73,7 @@
 
     var grandTotal = totally(totals);
 
-    function totally (totals) {
+    function totally(totals) {
         var grandTotal = 0;
         for(var j = 0; j < 14; j++) {
             grandTotal += totals[j];
@@ -89,5 +89,3 @@
     console.log(module.totals);
 
 })(window.module = window.module || {});
-
-console.log('module working', module.stores);
