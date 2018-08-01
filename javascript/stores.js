@@ -2,7 +2,7 @@
 
 (function(module) {
 
-     var stores = [
+    var stores = [
         {
             name: 'Pike Place Market',
             key: 'pike',
@@ -42,7 +42,7 @@
 
     var totals = {
         name: 'Totals',
-        hours: [],
+        cookiesByHour: [],
     };
 
 
@@ -54,10 +54,10 @@
             return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is exclusive and the minimum is inclusive
         }
 
-        for (var i = 0; i < storeArray.length; i++) {
+        for(var i = 0; i < storeArray.length; i++) {
 
             var hourArray = [];
-            for (var hr = 0; hr < 14; hr++) {
+            for(var hr = 0; hr < 14; hr++) {
                 hourArray.push(getRandomHRs(storeArray[i]['custPerHourMin'], storeArray[i]['custPerHourMax']));
             }
             storeArray[i]['custByHour'] = hourArray;
@@ -66,9 +66,9 @@
     }
 
     function cookiesByHour(storeArray) {
-        for (var i = 0; i < storeArray.length; i++) {
+        for(var i = 0; i < storeArray.length; i++) {
             storeArray[i]['cookiesByHour'] = [];
-            for (var hr = 0; hr < 14; hr++) {
+            for(var hr = 0; hr < 14; hr++) {
                 var hrSales = storeArray[i]['custByHour'][hr] * storeArray[i]['cookiesPerCust'];
                 hrSales = hrSales.toPrecision(2);
                 hrSales = parseFloat(hrSales);
@@ -79,9 +79,9 @@
 
     function cookiesPerDay(storeArray) {
 
-        for (var i = 0; i < storeArray.length; i++) {
+        for(var i = 0; i < storeArray.length; i++) {
             var rowSum = 0;
-            for (var hr = 0; hr < 14; hr++) {
+            for(var hr = 0; hr < 14; hr++) {
                 rowSum += storeArray[i]['cookiesByHour'][hr];
             }
             storeArray[i]['cookiesPerDay'] = rowSum;
@@ -89,9 +89,9 @@
     }
 
     function cookiesByHourTotals(storeArray, totalsObj, key) {
-        for (var i = 0; i < 13; i++) {
+        for(var i = 0; i < 13; i++) {
             var columnTotal = 0;
-            for (var j = 0; j < storeArray.length; j++) {
+            for(var j = 0; j < storeArray.length; j++) {
                 columnTotal += storeArray[j]['cookiesByHour'][i];
             }
             totalsObj[key][i] = columnTotal;
@@ -100,7 +100,7 @@
         // this should be a separate function called cookiesPerDayTotals
         var rowSum = 0;
 
-        for (var hr = 0; hr < 13; hr++) {
+        for(var hr = 0; hr < 13; hr++) {
             rowSum += totalsObj[key][hr];
         }
         totalsObj[key].push(rowSum);
@@ -109,6 +109,7 @@
 
 
     module.stores = stores;
+    module.totals = totals;
     module.custByHour = custByHour;
     module.cookiesByHour = cookiesByHour;
     module.cookiesPerDay = cookiesPerDay;
