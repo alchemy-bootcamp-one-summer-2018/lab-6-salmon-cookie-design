@@ -1,13 +1,12 @@
 'use strict';
 
-(function(module){
+(function(module) {
     let stores = module.stores;
     let toDOM = module.toDOM;
     let html = module.html;
-    let totals = module.totals;
+    // let totals = module.totals;
 
-    let table = document.getElementById('stores'); //analogous to tfooter
-        
+    let table = document.getElementById('stores');         
     let render = function(store){
         return toDOM(html`
             <tr><td>${store.name}</td>
@@ -36,12 +35,6 @@
         let dom = render(store);
         table.appendChild(dom);
     }
-
-    let footer = document.getElementById('table-footer');
-    let footDom = render(totals);
-    footer.appendChild(footDom);
-
-    //won't need to loop for footer 
-
-
+    module.render = render;
+    
 })(window.module = window.module || {});

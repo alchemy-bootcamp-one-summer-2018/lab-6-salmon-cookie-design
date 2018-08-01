@@ -2,7 +2,7 @@
 
 (function(module) {
 
-    var stores = [{
+    let stores = [{
         name: 'Pike Place Market',
         minCustomers: 10,
         maxCustomers: 40,
@@ -29,28 +29,29 @@
         avgSale: 8,
     }];
     
+    //computes each hour of sales
     for(let i = 0; i < stores.length; i++){
         stores[i].hours = [];
         stores[i].cookiesSoldPerHour = [];
         for(let h = 0; h < 14; h++){
-            var customersPerHour = customerCount(stores[i].minCustomers, stores[i].maxCustomers);
+            let customersPerHour = customerCount(stores[i].minCustomers, stores[i].maxCustomers);
             stores[i].hours.push(customersPerHour);
-            var cookiesPerHour = customersPerHour * stores[i].avgSale;
+            let cookiesPerHour = customersPerHour * stores[i].avgSale;
             stores[i].cookiesSoldPerHour.push(cookiesPerHour);
         }
     }
 
-    var totals = [];
+    let totals = [];
     
     //computes horizontal store totals
     for(let i = 0; i < stores.length; i++){ 
         stores[i].storeTotals = [];
-        var storeTotal = totally(stores[i].cookiesSoldPerHour);
+        let storeTotal = totally(stores[i].cookiesSoldPerHour);
         stores[i].storeTotals.push(storeTotal);
     }
     //get hour by hour totals
     for(let i = 0; i < 14; i++){
-        var total = 0;
+        let total = 0;
         for(let h = 0; h < stores.length; h++){
             total += stores[h].cookiesSoldPerHour[i];
         }
@@ -58,13 +59,13 @@
     }
     
     function totally(totals) {
-        var grandTotal = 0;
-        for(var j = 0; j < 14; j++) {
+        let grandTotal = 0;
+        for(let j = 0; j < 14; j++) {
             grandTotal += totals[j];
         } 
         return grandTotal;
     }
-    var grandTotal = totally(totals);
+    let grandTotal = totally(totals);
     
     function customerCount(min, max) {
         min = Math.ceil(min);
