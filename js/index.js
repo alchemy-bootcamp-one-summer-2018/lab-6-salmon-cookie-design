@@ -37,7 +37,7 @@
     for(var i = 0; i < (stores.length); i++) {
         store = stores[i];
 
-        var dom = render(store);
+        let dom = render(store);
 
         table.appendChild(dom);
     }
@@ -45,7 +45,7 @@
 
     var footer = document.getElementById('table-foot');
         
-    var dom = render(totals);
+    let dom = render(totals);
 
     footer.appendChild(dom);
 
