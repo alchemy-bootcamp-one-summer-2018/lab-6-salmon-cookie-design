@@ -13,20 +13,34 @@
 <body id="sales-page">
     <h1 id="sales-title">Savor Salmon Macarons: Sales Data</h1>
     <h2>Add a New Store to the Table</h2>
-        <form id="form-label">
-            <label>Location name <br />
-                <input type="text"> 
-            </label><br />
-            <label> Minimum customers per hour <br />
-                <input type="number">
-            </label> <br />
-            <label>Maximum customers per hour <br />
-                <input type="number">
-            </label> <br />
-            <label>Average macarons per sale <br />
-                <input type="number">
-            </label> <br />
+        <form id="form">
+            <p>
+                <label>Location name <br />
+                    <input type="text" name="name"> 
+                </label>
+            </p>
+            <p>
+                <label> Minimum customers per hour <br />
+                    <input type="number" name="min">
+                </label>
+            </p>
+            <p>
+                <label>Maximum customers per hour <br />
+                    <input type="number" name="max">
+                </label>
+            </p>
+            <p>
+                <label>Average macarons per sale <br />
+                    <input type="number" name="avg">
+                </label>
+            </p>
+            <p>
+                <button type="submit">Add</button>
+            </p>
+            
         </form>
+
+        <p id="form-error"></p>
 
     <table>
         <thead>
@@ -58,6 +72,7 @@
     </table>
     <script src="js/toDOM.js"></script>
     <script src="js/stores.js"></script>
+    <script src="js/store-form.js"></script>
     <script src="js/index.js"></script>
 </body>
 </html>

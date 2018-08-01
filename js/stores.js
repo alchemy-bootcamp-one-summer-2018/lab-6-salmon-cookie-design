@@ -2,7 +2,7 @@
 
 (function(module) {
 
-    var stores = [{
+    let stores = [{
         name: 'Pike Place Market',
         min: '23',
         max: '65',
@@ -34,13 +34,27 @@
         key: 'Alki'    
     }];
 
-    
+    function addKey(store) {
+        store.key = store.name.split('').reverse().join();
+    }
+
+    function addStore(store) {
+        addKey(store);
+        stores.push(store);
+    }
+
+    for(let i = 0; i < stores.length; i++) {
+        addKey(stores[i]);
+    }
+
+    module.addStore = addStore;
+
     for(let i = 0; i < stores.length; i++) {
         stores[i].customers = [];
         for(let j = 0; j < 14; j++) {
-            var min = Math.ceil(parseInt(stores[i].min));
-            var max = Math.floor(parseInt(stores[i].max));
-            var customersThisHour = Math.floor(Math.random() * (max - min)) + min;
+            let min = Math.ceil(parseInt(stores[i].min));
+            let max = Math.floor(parseInt(stores[i].max));
+            let customersThisHour = Math.floor(Math.random() * (max - min)) + min;
             stores[i].customers.push(customersThisHour);
         }
     }
@@ -48,34 +62,34 @@
     for(let i = 0; i < stores.length; i++) {
         stores[i].macaronsPerHour = [];
         for(let j = 0; j < 14; j++) {
-            var macaronsThisHour = Math.ceil((parseFloat(stores[i].customers[j])) * (parseFloat(stores[i].avg)));
+            let macaronsThisHour = Math.ceil((parseFloat(stores[i].customers[j])) * (parseFloat(stores[i].avg)));
             stores[i].macaronsPerHour.push(macaronsThisHour);
         }
     }
 
     for(let i = 0; i < stores.length; i++) {
         stores[i].storeTotals = [];
-        var storeTotal = totally(stores[i].macaronsPerHour);
+        let storeTotal = totally(stores[i].macaronsPerHour);
         stores[i].storeTotals.push(storeTotal);
     }
 
     module.stores = stores;
     
-    var totals = [];
-    for(var i = 0; i < 14; i++) {
-        var total = 0;
+    let totals = [];
+    for(let i = 0; i < 14; i++) {
+        let total = 0;
 
-        for(var j = 0; j < stores.length; j++) {
+        for(let j = 0; j < stores.length; j++) {
             total += stores[j].macaronsPerHour[i];
         }
         totals.push(total);
     }
 
-    var grandTotal = totally(totals);
+    let grandTotal = totally(totals);
 
     function totally(totals) {
-        var grandTotal = 0;
-        for(var j = 0; j < 14; j++) {
+        let grandTotal = 0;
+        for(let j = 0; j < 14; j++) {
             grandTotal += totals[j];
         } 
         return grandTotal;

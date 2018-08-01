@@ -1,16 +1,16 @@
 'use strict';
 
 (function(module){
-    var stores = module.stores;
-    var toDOM = module.toDOM;
-    var html = module.html;
-    var totals = module.totals;
+    let stores = module.stores;
+    let toDOM = module.toDOM;
+    let html = module.html;
+    let totals = module.totals;
 
 
 
-    var table = document.getElementById('table-body');
+    let table = document.getElementById('table-body');
 
-    var render = function(store) {
+    let render = function(store) {
         return toDOM(html`        
             <tr>
                 <td>${store.name}</td>
@@ -33,20 +33,34 @@
         `);
     };
 
-    var store;
-    for(var i = 0; i < (stores.length); i++) {
+    let store;
+    for(let i = 0; i < (stores.length); i++) {
         store = stores[i];
 
         let dom = render(store);
 
         table.appendChild(dom);
     }
-
-
-    var footer = document.getElementById('table-foot');
-        
+    
+    let footer = document.getElementById('table-foot');
+    
     let dom = render(totals);
-
+    
     footer.appendChild(dom);
+    
+
+    //
+    // For adding stores
+    //
+
+    let addStore = module.addStore;
+    let initStoreForm = module.initStoreForm;
+    let updateStoreList = module.updateStoreList;
+
+    initStoreForm(function onStoreAdded(store) {
+        console.log('initStoreForm working');
+        addStore(store);
+        updateStoreList();
+    });
 
 })(window.module = window.module || {});
