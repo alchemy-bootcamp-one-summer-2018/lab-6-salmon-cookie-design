@@ -57,12 +57,44 @@
     }
 
     console.log('stores array:', stores);
-
-    // for(var k = 0; k < 14; k++) {
-    //     getElementById.
-    // }
-
     module.stores = stores;
 
-
 })(window.module = window.module || {});
+
+
+
+// EXAMPLE:
+
+// for(var i = 0; i < stores.length; i++) {
+//     stores[i].storeTotals = [];
+//     var StoreTotal = totally(stores[i].cookieSalesPerStore);    
+//     stores[i].storeTotals.push(store totals);
+// }
+
+// module.stores = stores;
+
+// var totals = [];
+// for (var i = 0;  i < 14; i++) {
+//     var total = 0
+//     for(var j; j < stores.length; j++) {
+//         total += stores[j].cookieSalesPerStore[i];
+// }
+// totals.push(total);
+// }
+
+// var grandTotal = totally(totals);
+
+// function totally (totals) {
+//     var grandTotal = 0;
+//     for(var j = 0; j < 14; j++) {
+//         grandTotal += totals[j];
+//     }
+//     return grandTotal;
+// }
+
+// module.totals = {
+//     name: 'Totals'
+//     cookieSalesPerStore: totals,
+//     storeTotals: grandTotal
+// };
+// console.log(module.totals);
