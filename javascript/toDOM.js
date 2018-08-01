@@ -81,4 +81,5 @@ function storeTableCreator(storeArray, totalsArray) {
 }
 
 var storeTable = storeTableCreator(stores, totals['hours']);
-storeTable;
+
+document.getElementById('sales-table').innerHTML = storeTable;
