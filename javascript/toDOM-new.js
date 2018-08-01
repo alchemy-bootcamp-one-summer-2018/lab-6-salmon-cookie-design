@@ -1,7 +1,7 @@
 'use strict';
 
 (function(module){
-    var fruits = module.fruits;
+    var stores = module.stores;
     var toDOM = module.toDOM;
     var html = module.html;
 

@@ -2,33 +2,34 @@
 
 (function(module) {
 
-    var fruits = [{
-        name: 'orange',
-        color: 'orange',
-        image: 'images/orange.png'
-    }, {
-        name: 'apple',
-        color: 'red',
-        image: 'images/apple.png'
-    }, {
-        name: 'cherry',
-        color: 'red',
-        image: 'images/cherry.png'
-    }, {
-        name: 'banana',
-        color: 'yellow',
-        image: 'images/banana.png'
-    }, {
-        name: 'mango',
-        color: 'orange',
-        image: 'images/mango.png'
-    }];
+    var totals = {
+        name: 'Totals',
+        hours: [],
+    };
 
-    // for(var i = 0; i < fruits.length; i++) {
-    //     fruits[i].someProperty = 'prop';
-    // }
 
-    module.fruits = fruits;
+    function cookiesByHourTotals(storeArray, totalsObj, key) {
+        for (var i = 0; i < 13; i++) {
+            var columnTotal = 0;
+            for (var j = 0; j < storeArray.length; j++) {
+                columnTotal += storeArray[j]['cookiesByHour'][i];
+            }
+            totalsObj[key][i] = columnTotal;
+        }
+
+        // this should be a separate function called cookiesPerDayTotals
+        var rowSum = 0;
+
+        for (var hr = 0; hr < 13; hr++) {
+            rowSum += totalsObj[key][hr];
+        }
+        totalsObj[key].push(rowSum);
+
+    }
+
+
+    module.totals = totals;
+    module.cookiesByHourTotals = cookiesByHourTotals;
 
 })(window.module = window.module || {});
 
