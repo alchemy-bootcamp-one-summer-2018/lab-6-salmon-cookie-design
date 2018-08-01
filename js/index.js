@@ -46,4 +46,6 @@
 
     tFoot.appendChild(dom);
 
+    module.render = render;
+
 })(window.module = window.module || {});
