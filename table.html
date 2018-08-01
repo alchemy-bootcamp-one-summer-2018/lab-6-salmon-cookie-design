@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <style>
     h2 {
         font-family: Georgia, 'Times New Roman', Times, serif
@@ -21,138 +21,43 @@
     <title>
         Pat's Salmon Cookie Sales
     </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 </head>
 <body>
 
 <img src="https://image.ibb.co/fmzRFe/tablelogo.png" style = "width:40%" class = "center"></img>
 
 <table id="stores" border="2" bgcolor="#efefef">
-  <tr>
-    <th>Location</th>
-    <th>6am</th>
-    <th>7am</th>
-    <th>8am</th>
-    <th>9am</th>
-    <th>10am</th>
-    <th>11am</th>
-    <th>12pm</th>
-    <th>1pm</th>
-    <th>2pm</th>
-    <th>3pm</th>
-    <th>4pm</th>
-    <th>5pm</th>
-    <th>6pm</th>
-    <th>7pm</th>
-
-    <th>Location Totals</th>
-  </tr>
-  <tr>
-    <td>Pike Place Market</td>
-    <td>stores.cookieSalesPerStore[0]</td>
-    <td>stores.cookieSalesPerStore[1]</td>
-    <td>stores.cookieSalesPerStore[2]</td>
-    <td>stores.cookieSalesPerStore[3]</td>
-    <td>stores.cookieSalesPerStore[4]</td>
-    <td>stores.cookieSalesPerStore[5]</td>
-    <td>stores.cookieSalesPerStore[6]</td>
-    <td>stores.cookieSalesPerStore[7]</td>
-    <td>stores.cookieSalesPerStore[8]</td>
-    <td>stores.cookieSalesPerStore[9]</td>
-    <td>stores.cookieSalesPerStore[10]</td>
-    <td>stores.cookieSalesPerStore[11]</td>
-    <td>stores.cookieSalesPerStore[12]</td>
-    <td>stores.cookieSalesPerStore[13]</td>
-  </tr>
-  <tr>
-    <td>SeaTac Airport</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Seattle Center</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Capital Hill</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Alki</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tfoot>
+    <thead>
         <tr>
-            <td>Hourly Totals for All Locations</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <th>Location</th>
+            <th>6am</th>
+            <th>7am</th>
+            <th>8am</th>
+            <th>9am</th>
+            <th>10am</th>
+            <th>11am</th>
+            <th>12pm</th>
+            <th>1pm</th>
+            <th>2pm</th>
+            <th>3pm</th>
+            <th>4pm</th>
+            <th>5pm</th>
+            <th>6pm</th>
+            <th>7pm</th>
         </tr>
+    </thead>
+    <tbody id ="stores">
+    </tbody>
+    <tfoot>
     </tfoot>
-
 </table>
 
+<script src="toDOM.js"></script>
 <script src="stores.js"></script>
+<script src="index.js"></script>
+
 </body>
 </html>
