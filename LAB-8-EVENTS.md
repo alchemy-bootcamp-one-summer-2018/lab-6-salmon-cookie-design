@@ -40,7 +40,7 @@ You should start by moving your code in `index.js` into two separate files:
 
 ### Add Update Functions
 
-Augment store-table.js` and `grand-totals.js` to export an `update<NameofComponent>` function that can be called
+Augment `store-table.js` and `grand-totals.js` to export an `update<NameofComponent>` function that can be called
 to get those components to update their presentation (DOM).
 
 * For table data, you can use the track last method we used in class
