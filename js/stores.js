@@ -53,6 +53,25 @@
         }
     }
 
+    for(var i = 0; i < stores.length; i++) {
+        stores[i].storeTotals = [];
+        var storeTotal = 0;
+        for(var j = 0; j < 14; j++) {
+            storeTotal += stores[i].macaronsPerHour[j];
+        }
+        stores[i].storeTotals.push(storeTotal);
+    }
+
+    // for(var i = 0; i < 14; i++) {
+    //     totals = [];
+    //     var total = 0;
+    //     for(var j = 0; j < store.length; j++) {
+    //         total += stores[j].macaronsPerHour[i];
+
+    //     }
+    //     stores[i].storeTotals.push(storeTotal);
+    // }
+
     module.stores = stores;
 
 })(window.module = window.module || {});
