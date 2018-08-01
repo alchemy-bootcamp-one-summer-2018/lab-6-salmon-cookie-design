@@ -30,26 +30,26 @@
     }];
 
 
-        var randomHoursArray = [];
-        var cookieSalesArray = [];
+    var randomHoursArray = [];
+    var cookieSalesArray = [];
 
-        for(var j = 0; j < stores.length; j++) {
-            stores[j].cookiesSalesPerStore = [];
-            for(var i = 0; i < 14; i++) {
-                var custPerHour = Math.floor(Math.random() * (stores[j].maxCust - stores[j].minCust)) + stores[j].minCust;
-                var cookieSales = custPerHour * stores[j].avgCookies;
+    for(var j = 0; j < stores.length; j++) {
+        stores[j].cookiesSalesPerStore = [];
+        for(var i = 0; i < 14; i++) {
+            var custPerHour = Math.floor(Math.random() * (stores[j].maxCust - stores[j].minCust)) + stores[j].minCust;
+            var cookieSales = custPerHour * stores[j].avgCookies;
                 //console.log('cookie sales:', cookieSales);
-                randomHoursArray.push(custPerHour);
-                cookieSalesArray.push(cookieSales);
-                stores[j].cookiesSalesPerStore.push(cookieSales);
+            randomHoursArray.push(custPerHour);
+            cookieSalesArray.push(cookieSales);
+            stores[j].cookiesSalesPerStore.push(cookieSales);
 
-            } 
-            console.log("cust per hour array:", randomHoursArray);
-            console.log("cookie sales per hour:", cookieSalesArray);
-        }
+        } 
+        console.log('cust per hour array:', randomHoursArray);
+        console.log('cookie sales per hour:', cookieSalesArray);
+    }
         
-        console.log('stores array:', stores);
-        
-        module.stores = stores;
+    console.log('stores array:', stores);
+
+    module.stores = stores;
         
 })(window.module = window.module || {});
