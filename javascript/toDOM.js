@@ -53,7 +53,7 @@ function storeTableCreator(storeArray, totalsArray) {
         `;
         rowHTML += `<td>${storeArray[i]['name']}</td>
         `;
-        for(var j = 0; j < 14; j++){
+        for(var j = 0; j < 13; j++){
             rowHTML += `<td>${storeArray[i]['cookiesByHour'][j]}</td>
         `;
         }
@@ -66,8 +66,10 @@ function storeTableCreator(storeArray, totalsArray) {
     
     var tfootHTML = '';
     tfootHTML += `<tfoot>
+                        <td>Hourly Totals for All Locations</td>
+
         `;
-    for(var k = 0; k < 15; k++) {
+    for(var k = 0; k < 14; k++) {
         tfootHTML += `<td>${totalsArray[k]}</td>`;
     }
     tfootHTML += `</tfoot>

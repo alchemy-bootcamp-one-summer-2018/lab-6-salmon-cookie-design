@@ -8,7 +8,7 @@ var totals = {
 
 
 function cookiesByHourTotals(storeArray, totalsObj, key) {
-    for(var i = 0; i < 14; i++) {
+    for(var i = 0; i < 13; i++) {
         var columnTotal = 0;
         for(var j = 0; j < storeArray.length; j++) {
             columnTotal += storeArray[j]['cookiesByHour'][i];
@@ -19,7 +19,7 @@ function cookiesByHourTotals(storeArray, totalsObj, key) {
     // this should be a separate function called cookiesPerDayTotals
     var rowSum = 0;
 
-    for(var hr = 0; hr < 14; hr++) {
+    for(var hr = 0; hr < 13; hr++) {
         rowSum += totalsObj[key][hr];
     }
     totalsObj[key].push(rowSum);
