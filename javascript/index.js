@@ -1,16 +1,16 @@
 'use strict';
 
 (function(module){
-    var stores = module.stores;
-    var stats = module.stats;
-    var toDOM = module.toDOM;
-    var html = module.html;
+    let stores = module.stores;
+    let stats = module.stats;
+    let toDOM = module.toDOM;
+    let html = module.html;
 
 
     // create a function we can call with data,
     // that returns DOM we can append into the 
     // document
-    var renderBodFoot = function(row) {
+    let renderBodFoot = function(row) {
         return toDOM(html`        
             <tr>
                 <td>${row.name}</td>
@@ -34,7 +34,7 @@
         `);
     };
 
-    var renderHeader = function() {
+    let renderHeader = function() {
         return toDOM(html`        
             <tr>
                 <th>Locations</th>
@@ -57,23 +57,23 @@
     };
 
 
-    var thead = document.getElementById('stores-thead');
-    var tbody = document.getElementById('stores-tbody');
-    var tfoot = document.getElementById('stores-tfoot');
+    let thead = document.getElementById('stores-thead');
+    let tbody = document.getElementById('stores-tbody');
+    let tfoot = document.getElementById('stores-tfoot');
 
 
     
 
-    var row;
+    let row;
     function htmlBuilder(containerArray, htmlElement) {
-        for(var i = 0; i < containerArray.length; i++) {
+        for(let i = 0; i < containerArray.length; i++) {
             row = containerArray[i];
-            var dom = renderBodFoot(row);
+            let dom = renderBodFoot(row);
             htmlElement.appendChild(dom);
         }
     }
 
-    var staticHeader = renderHeader();
+    let staticHeader = renderHeader();
     thead.appendChild(staticHeader);
 
     htmlBuilder(stores, tbody);
