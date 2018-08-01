@@ -68,7 +68,6 @@
     function htmlBuilder(containerArray, htmlElement) {
         for(var i = 0; i < containerArray.length; i++) {
             row = containerArray[i];
-            console.log(row);
             var dom = renderBodFoot(row);
             htmlElement.appendChild(dom);
         }
@@ -84,35 +83,3 @@
 
 })(window.module = window.module || {});
 
-
-
-
-
-// function storeTableCreator(storeArray, totalsArray) {
-
-//     var tbodyHTML = '';
-//     for (var i = 0; i < storeArray.length; i++) {
-//         var rowHTML = '';
-//         rowHTML += `<tr>
-//         `;
-//         rowHTML += `<td>${storeArray[i]['name']}</td>
-//         `;
-//         for (var j = 0; j < 13; j++) {
-//             rowHTML += `<td>${storeArray[i]['cookiesByHour'][j]}</td>
-//         `;
-//         }
-//         rowHTML += `<td>${storeArray[i]['cookiesPerDay']}</td>
-//         `;
-//         rowHTML += `</tr>
-//         `;
-//         tbodyHTML += rowHTML;
-//     }
-
-//     var tfootHTML = '';
-//     { totalsObj['name'] }</td >
-
-//     for (var k = 0; k < 14; k++) {
-//         tfootHTML += `<td>${totalsArray[k]}</td>`;
-//     }
-
-// }
