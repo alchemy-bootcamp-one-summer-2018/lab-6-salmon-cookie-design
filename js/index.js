@@ -1,15 +1,10 @@
 'use strict';
 
 (function(module){
-    console.log('index.js running');
     var stores = module.stores;
-    console.log('stores', stores);
     var toDOM = module.toDOM;
     var html = module.html;
     var locations = Object.keys(stores);
-    console.log('locations', locations);
-    
-
     // reference the ul
     var tBody = document.getElementById('stores-table');
 
@@ -40,12 +35,8 @@
     
     // loop each store
     var store;
-    console.log('before for loop');
-    console.log('stores length', stores.length);
     for(var i = 0; i < locations.length; i++) {
-        console.log('reached for loop');
         store = stores[locations[i]];
-        console.log(store);
         var dom = renderTable(store);
         tBody.appendChild(dom);
     }
