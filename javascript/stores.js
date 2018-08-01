@@ -1,5 +1,6 @@
 /* exported stores */
 
+
 var stores = [
     {
         name: 'Pike Place Market',
@@ -57,31 +58,33 @@ function custByHour(storeArray) {
     }
 }
 
-/* Unnecessary but saving in case this is useful later */
-/* eslint-disable-next-line */
-function custPerDay(storeArray) {
+function cookiesByHour(storeArray) {
+    for(var i = 0; i < storeArray.length; i++){
+        storeArray[i]['cookiesByHour'] = [];
+        for(var hr = 0; hr < 14; hr++) {
+            var hrSales = storeArray[i]['custByHour'][hr] * storeArray[i]['cookiesPerCust'];
+            hrSales = hrSales.toPrecision(2);
+            hrSales = parseFloat(hrSales);
+            storeArray[i]['cookiesByHour'][hr] = hrSales;
+        }
+    }
+}
+
+function cookiesPerDay(storeArray) {
 
     for(var i = 0; i < storeArray.length; i++) {
         var rowSum = 0;
         for(var hr = 0; hr < 14; hr++) {
-            rowSum += storeArray[i]['custByHour'][hr];
+            rowSum += storeArray[i]['cookiesByHour'][hr];
         }
-        storeArray[i]['custPerDay'] = rowSum;
+        storeArray[i]['cookiesPerDay'] = rowSum;
     }
 }
 
-function cookiesPerHour(storeArray) {
-    for(var i = 0; i < storeArray.length; i++){
-        storeArray[i]['cookiesPerHour'] = [];
-        for(var hr = 0; hr < 14; hr++) {
-            var hrSales = storeArray[i]['custByHour'][hr] * storeArray[i]['cookiesPerCust'];
-            storeArray[i]['cookiesPerHour'][hr] = hrSales.toPrecision(2);
-        }
-    }
-}
 
 custByHour(stores);
-cookiesPerHour(stores);
+cookiesByHour(stores);
+cookiesPerDay(stores);
 
 
 
