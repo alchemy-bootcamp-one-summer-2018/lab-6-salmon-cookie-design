@@ -29,23 +29,33 @@
         avgSale: 8,
     }];
     
-    for(var i = 0; i < stores.length; i++){
+    for(let i = 0; i < stores.length; i++){
         stores[i].hours = [];
         stores[i].cookiesSoldPerHour = [];
-        for(var h = 0; h < 14; h++){
+        for(let h = 0; h < 14; h++){
             var customersPerHour = customerCount(stores[i].minCustomers, stores[i].maxCustomers);
             stores[i].hours.push(customersPerHour);
             var cookiesPerHour = customersPerHour * stores[i].avgSale;
             stores[i].cookiesSoldPerHour.push(cookiesPerHour);
         }
     }
-    // for(var j = 0; j < stores.length; j++){
-    //     stores[j].totals = [];
-    //     for(var k = 0; k < 14; k++){
-    //         var storeTotal = 
-    //     }
 
-    //}
+    var totals = [];
+
+    for(let i = 0; i < stores.length; i++){ 
+        stores[i].storeTotals = [];
+        var storeTotal = totally(stores[i].cookiesSoldPerHour);
+        stores[i].storeTotals.push(storeTotal);
+    }
+    
+    function totally(totals) {
+        var grandTotal = 0;
+        for(var j = 0; j < 14; j++) {
+            grandTotal += totals[j];
+        } 
+        return grandTotal;
+    }
+    
     function customerCount(min, max) {
         min = Math.ceil(min);
         max = Math.floor(max);

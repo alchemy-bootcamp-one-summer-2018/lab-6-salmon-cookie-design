@@ -24,6 +24,7 @@
                 <td>${store.cookiesSoldPerHour[11]}</td>
                 <td>${store.cookiesSoldPerHour[12]}</td>
                 <td>${store.cookiesSoldPerHour[13]}</td>
+                <td class="totals">${store.storeTotals}</td>
                       
             </tr>
         `);
@@ -34,5 +35,6 @@
         var dom = render(store);
         table.appendChild(dom);
     }
+//var footer = document.getElementById('table-foot');
 
 })(window.module = window.module || {});
