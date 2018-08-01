@@ -41,11 +41,20 @@
     }
 
     var totals = [];
-
+    
+    //computes horizontal store totals
     for(let i = 0; i < stores.length; i++){ 
         stores[i].storeTotals = [];
         var storeTotal = totally(stores[i].cookiesSoldPerHour);
         stores[i].storeTotals.push(storeTotal);
+    }
+    //get hour by hour totals
+    for(let i = 0; i < 14; i++){
+        var total = 0;
+        for(let h = 0; h < stores.length; h++){
+            total += stores[h].cookiesSoldPerHour[i];
+        }
+        totals.push(total);
     }
     
     function totally(totals) {
@@ -55,6 +64,7 @@
         } 
         return grandTotal;
     }
+    var grandTotal = totally(totals);
     
     function customerCount(min, max) {
         min = Math.ceil(min);
@@ -63,5 +73,11 @@
     }
    
     module.stores = stores;
+    
+    module.totals = {
+        name: 'TOTALS',
+        cookiesSoldPerHour: totals,
+        storeTotals: grandTotal
+    };
 
 })(window.module = window.module || {});

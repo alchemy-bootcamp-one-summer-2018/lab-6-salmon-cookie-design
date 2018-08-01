@@ -4,8 +4,9 @@
     var stores = module.stores;
     var toDOM = module.toDOM;
     var html = module.html;
+    var totals = module.totals;
 
-    var table = document.getElementById('stores');
+    var table = document.getElementById('stores'); //analogous to tfooter
         
     var render = function(store){
         return toDOM(html`
@@ -35,6 +36,12 @@
         var dom = render(store);
         table.appendChild(dom);
     }
-//var footer = document.getElementById('table-foot');
+
+    var footer = document.getElementById('table-footer');
+    var footDom = render(totals);
+    footer.appendChild(footDom);
+
+    //won't need to loop for footer 
+
 
 })(window.module = window.module || {});
