@@ -27,7 +27,7 @@
                 <td>${row.cookiesByHour[10]}</td>
                 <td>${row.cookiesByHour[11]}</td>
                 <td>${row.cookiesByHour[12]}</td>
-                <td class="end-totals" style="background: navy">
+                <td class="end-totals" style="background: navy; color: rgba(192, 192, 192, 1)">
                     ${row.cookiesPerDay}
                 </td>
             </tr>
