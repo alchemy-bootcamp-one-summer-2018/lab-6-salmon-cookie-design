@@ -1,4 +1,4 @@
-/* globals stores */
+/* exported stores */
 
 var stores = [
     {
@@ -60,6 +60,7 @@ function addHRArray(storeArray) {
 }
 
 addHRArray(stores);
+
 
 
 
