@@ -56,10 +56,81 @@
 
     }
 
+    console.log('stores array:::', stores[0].cookieSalesPerStore);
     console.log('stores array:', stores);
     module.stores = stores;
 
+    var totals = [];
+    for(let i = 0; i < 14; i++) {
+        var total = 0;
+
+        for(let j = 0; j < stores.length; j++) {
+            total = total + stores[j].cookieSalesPerStore[i];
+        }
+        
+        totals.push(total);
+    }
+
+    var grandTotal = totally(totals);
+
+    function totally(totals) {
+        var grandTotal = 0;
+        for(var j = 0; j < 14; j++) {
+            grandTotal = grandTotal + totals[j];
+        } 
+        return grandTotal;
+    }
+
+    var storeTotals = horizontalTotals(stores);
+    function horizontalTotals(stores) {
+        var storeTotals = 0;
+
+        for(var j = 0; j < stores.length; j++) {
+            stores[j].dailyStoreTotal = 0;
+
+            var salesPerHourPerStoreArray = stores[j].cookieSalesPerStore;
+            console.log('horizontal array aka salesPerHourPerStoreArray:', salesPerHourPerStoreArray);
+
+            for(var i = 0; i < 14; i++) {
+                stores[j].dailyStoreTotal += salesPerHourPerStoreArray[i];
+            }
+
+            storeTotals = storeTotals + stores[j].cookieSalesPerStore[j];
+            console.log('dailyStoreTotal', stores[j].dailyStoreTotal);
+            
+        } 
+        
+    }
+
+    console.log('these are store totals', storeTotals);
+
+    module.totals = {
+        name: 'Totals',
+        cookieSalesPerHourTotal: totals,
+        totalHourTotals: grandTotal
+    };
+
+    console.log(module.totals);
+
+
 })(window.module = window.module || {});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
