@@ -39,9 +39,13 @@
             stores[i].cookiesSoldPerHour.push(cookiesPerHour);
         }
     }
-    // for(var i = 0; i < stores.length; i++){
-    //     stores.totals = [];
-    //}  
+    // for(var j = 0; j < stores.length; j++){
+    //     stores[j].totals = [];
+    //     for(var k = 0; k < 14; k++){
+    //         var storeTotal = 
+    //     }
+
+    //}
     function customerCount(min, max) {
         min = Math.ceil(min);
         max = Math.floor(max);
