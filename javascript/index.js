@@ -2,7 +2,6 @@
 
 (function(module){
     var stores = module.stores;
-    var totals = module.totals;
     var toDOM = module.toDOM;
     var html = module.html;
 
