@@ -1,4 +1,4 @@
-Lab 7: Events and Data Communication
+Lab 8: Events and Data Communication
 ===
 
 Add a form that allows Pat to add a new store. When the store is added, a new row is added to the table and the
