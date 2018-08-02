@@ -83,27 +83,32 @@
         }
     }
 
-    function populate(store) {
+    function addKey(store) {
         store.key = store.name.split('').reverse().join();
-        custByHour(stores);
-        cookiesByHour(stores);
-        cookiesPerDay(stores);
     }
 
     for(var i = 0; i < stores.length; i++) {
-        populate(stores[i]);
+        addKey(stores[i]);
     }
 
     function addStore(store) {
         // if (fruit.name === 'cantaloupe') {
         //     throw new Error('Sorry, Lauren hates those');
         // }
-        populate(store);
+
+        addKey(store);
         stores.push(store);
+        populate(stores);
     }
 
- 
- 
+    // this is wrong, but it should temporarily prove I can add new stores to table
+    function populate(stores){
+        custByHour(stores);
+        cookiesByHour(stores);
+        cookiesPerDay(stores);
+        
+        
+    }
     
     populate(stores);
 
