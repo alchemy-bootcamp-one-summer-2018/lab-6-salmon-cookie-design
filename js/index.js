@@ -1,14 +1,14 @@
 'use strict';
 
 (function(module){
-    var stores = module.stores;
+    let stores = module.stores;
     console.log('stores', stores);
-    var toDOM = module.toDOM;
-    var html = module.html;
+    let toDOM = module.toDOM;
+    let html = module.html;
 
-    var table = document.getElementById('stores');
+    let table = document.getElementById('stores');
 
-    var render = function(stores) {
+    let render = function(stores) {
         return toDOM(html`
                 <tr>
                     <td> ${stores.name}</td>
@@ -34,8 +34,8 @@
     };
     
     
-    var store;
-    for(var i = 0; i < stores.length; i++) {
+    let store;
+    for(let i = 0; i < stores.length; i++) {
         store = stores[i];
         var dom = render(store);
 

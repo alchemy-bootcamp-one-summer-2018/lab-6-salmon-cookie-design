@@ -38,11 +38,11 @@
         dailyTotal: 0
     }];
 
-    for(var i = 0; i < stores.length; i++) {
+    for(let i = 0; i < stores.length; i++) {
         stores[i].hours = [];
-        for(var j = 0; j < 15; j++){
-            var hoursArray = stores[i].hours;
-            var cookiesSoldPerHour = customerPerHour(stores[i].min, stores[i].max) * stores[i].average;
+        for(let j = 0; j < 15; j++){
+            let hoursArray = stores[i].hours;
+            let cookiesSoldPerHour = customerPerHour(stores[i].min, stores[i].max) * stores[i].average;
             hoursArray.push(cookiesSoldPerHour);
             console.log(cookiesSoldPerHour);
             stores[i].dailyTotal += cookiesSoldPerHour;
