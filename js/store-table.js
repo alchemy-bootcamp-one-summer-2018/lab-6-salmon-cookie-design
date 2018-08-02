@@ -44,6 +44,7 @@
         }
 
         lastStores = stores.slice();
+        console.log('last stores', lastStores);
     }
 
     for(let i = 0; i < stores.length; i++) {

@@ -33,7 +33,7 @@
         avg: '4.6',
         key: 'Alki'    
     }];
-
+    
     for(let i = 0; i < stores.length; i++) {
         stores[i].customers = [];
         for(let j = 0; j < 14; j++) {
