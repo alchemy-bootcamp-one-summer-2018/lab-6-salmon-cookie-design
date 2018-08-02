@@ -7,31 +7,26 @@
         min: '23',
         max: '65',
         avg: '6.3',
-        key: 'pike'
     }, {
         name: 'SeaTac Airport',
         min: '3',
         max: '24',
-        avg: '1.2',
-        key: 'seatac'    
+        avg: '1.2',  
     }, {
         name: 'Seattle Center',
         min: '11',
         max: '38',
-        avg: '3.7',
-        key: 'seattercenter'    
+        avg: '3.7',   
     }, {
         name: 'Capitol Hill',
         min: '20',
         max: '38',
-        avg: '2.3',
-        key: 'caphill'    
+        avg: '2.3',   
     }, {
         name: 'Alki',
         min: '2',
         max: '16',
-        avg: '4.6',
-        key: 'Alki'    
+        avg: '4.6',  
     }];
     
     function customers(store){
