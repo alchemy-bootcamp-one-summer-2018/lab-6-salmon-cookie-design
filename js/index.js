@@ -41,7 +41,12 @@
 
         table.appendChild(dom);
     }
-    
+
     //console.log(dom);
     //table.appendChild(dom);
 })(window.module = window.module || {});
+
+//add store form in its store form function
+function((onStoreAdded){
+    //let
+}
