@@ -9,5 +9,4 @@
     let footDom = render(totals);
     footer.appendChild(footDom);
     
-
 })(window.module = window.module || {});
