@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Bowlby+One+SC|Playfair+Display|Quicksand');
+body {
+    background-color: #B46332;
+}
+header { 
+    background-color: white;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+
+
+}
+
+h1 {
+    color:Black;
+    font-family: 'Bowlby One SC', cursive;
+    font-size: 80px;
+}
+
+    
