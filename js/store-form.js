@@ -32,6 +32,7 @@
             }
             catch (err) {
                 error.textContent = err.message;
+                console.error(err);
             }
 
         });

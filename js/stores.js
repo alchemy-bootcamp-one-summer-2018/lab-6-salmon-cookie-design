@@ -34,24 +34,32 @@
         key: 'Alki'    
     }];
     
+    function customers(store){
+        store.customers = [];
+        for(let j = 0; j < 14; j++) {
+            let min = Math.ceil(parseInt(store.min));
+            let max = Math.floor(parseInt(store.max));
+            let customersThisHour = Math.floor(Math.random() * (max - min)) + min;
+            store.customers.push(customersThisHour);
+            
+        }
+    }
+
+    function macarons(store){
+        store.macaronsPerHour = [];
+        for(let j = 0; j < 14; j++) {
+            let macaronsThisHour = Math.ceil((parseFloat(store.customers[j])) * (parseFloat(store.avg)));
+            store.macaronsPerHour.push(macaronsThisHour);
+        }
+    }
+
     function generateMacaronsPerHour() {
         for(let i = 0; i < stores.length; i++) {
-            stores[i].customers = [];
-            for(let j = 0; j < 14; j++) {
-                let min = Math.ceil(parseInt(stores[i].min));
-                let max = Math.floor(parseInt(stores[i].max));
-                let customersThisHour = Math.floor(Math.random() * (max - min)) + min;
-                stores[i].customers.push(customersThisHour);
-                
-            }
+            customers(stores[i]);
         }
 
         for(let i = 0; i < stores.length; i++) {
-            stores[i].macaronsPerHour = [];
-            for(let j = 0; j < 14; j++) {
-                let macaronsThisHour = Math.ceil((parseFloat(stores[i].customers[j])) * (parseFloat(stores[i].avg)));
-                stores[i].macaronsPerHour.push(macaronsThisHour);
-            }
+            macarons(stores[i]);
         }
     }
 
@@ -92,11 +100,10 @@
     };
     console.log(module.totals);
 
-    // function addMacaronsPerHour(store) {
-    //     let macarons = [];
-    //     macarons = generateMacaronsPerHour(store);
-    //     store.macaronsPerHour = macarons;
-    // }
+    function addMacaronsPerHour(store) {
+        customers(store);
+        macarons(store);
+    }
     
     function addStore(store) {
         addMacaronsPerHour(store);
