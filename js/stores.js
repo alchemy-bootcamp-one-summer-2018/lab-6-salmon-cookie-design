@@ -29,6 +29,9 @@
         avgSale: 8,
     }];
     
+    function addStore(store) {
+        stores.push(store);
+    }
     //computes each hour of sales
     for(let i = 0; i < stores.length; i++){
         stores[i].hours = [];
@@ -72,7 +75,8 @@
         max = Math.floor(max);
         return Math.floor(Math.random() * (max - min)) + min;
     }
-   
+    
+    module.addStore = addStore;
     module.stores = stores;
     
     module.totals = {
