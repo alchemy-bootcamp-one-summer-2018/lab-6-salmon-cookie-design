@@ -32,6 +32,7 @@
     };
 
     function renderStore(store) {
+        console.log('STORE', store);
         let dom = render(store);
         table.appendChild(dom);
     }
@@ -40,11 +41,12 @@
         for(let i = 0; i < (stores.length); i++) {
             let store = stores[i];
             if(lastStores.includes(store)) continue;
+            console.log('store', store);
             renderStore(store);
+
         }
 
         lastStores = stores.slice();
-        console.log('last stores', lastStores);
     }
 
     for(let i = 0; i < stores.length; i++) {

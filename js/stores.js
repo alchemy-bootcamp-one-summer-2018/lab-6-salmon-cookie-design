@@ -34,26 +34,28 @@
         key: 'Alki'    
     }];
     
-    for(let i = 0; i < stores.length; i++) {
-        stores[i].customers = [];
-        for(let j = 0; j < 14; j++) {
-            let min = Math.ceil(parseInt(stores[i].min));
-            let max = Math.floor(parseInt(stores[i].max));
-            let customersThisHour = Math.floor(Math.random() * (max - min)) + min;
-            stores[i].customers.push(customersThisHour);
-            
+    function generateMacaronsPerHour() {
+        for(let i = 0; i < stores.length; i++) {
+            stores[i].customers = [];
+            for(let j = 0; j < 14; j++) {
+                let min = Math.ceil(parseInt(stores[i].min));
+                let max = Math.floor(parseInt(stores[i].max));
+                let customersThisHour = Math.floor(Math.random() * (max - min)) + min;
+                stores[i].customers.push(customersThisHour);
+                
+            }
+        }
+
+        for(let i = 0; i < stores.length; i++) {
+            stores[i].macaronsPerHour = [];
+            for(let j = 0; j < 14; j++) {
+                let macaronsThisHour = Math.ceil((parseFloat(stores[i].customers[j])) * (parseFloat(stores[i].avg)));
+                stores[i].macaronsPerHour.push(macaronsThisHour);
+            }
         }
     }
-    
 
-
-    for(let i = 0; i < stores.length; i++) {
-        stores[i].macaronsPerHour = [];
-        for(let j = 0; j < 14; j++) {
-            let macaronsThisHour = Math.ceil((parseFloat(stores[i].customers[j])) * (parseFloat(stores[i].avg)));
-            stores[i].macaronsPerHour.push(macaronsThisHour);
-        }
-    }
+    generateMacaronsPerHour();
 
     for(let i = 0; i < stores.length; i++) {
         stores[i].storeTotals = [];
@@ -90,10 +92,17 @@
     };
     console.log(module.totals);
 
+    // function addMacaronsPerHour(store) {
+    //     let macarons = [];
+    //     macarons = generateMacaronsPerHour(store);
+    //     store.macaronsPerHour = macarons;
+    // }
+    
     function addStore(store) {
+        addMacaronsPerHour(store);
         console.log('add store working');
         stores.push(store);
-        console.log('store push', stores);
+        console.log('add store push', stores);
     }
 
     module.addStore = addStore;
