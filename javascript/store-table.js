@@ -83,23 +83,30 @@
         }
     }
 
-    function addKey(store) {
+    function populate(store) {
         store.key = store.name.split('').reverse().join();
+        custByHour(stores);
+        cookiesByHour(stores);
+        cookiesPerDay(stores);
     }
 
     for(var i = 0; i < stores.length; i++) {
-        addKey(stores[i]);
+        populate(stores[i]);
     }
 
     function addStore(store) {
-        addKey(store);
+        // if (fruit.name === 'cantaloupe') {
+        //     throw new Error('Sorry, Lauren hates those');
+        // }
+        populate(store);
         stores.push(store);
     }
 
-    custByHour(stores);
-    cookiesByHour(stores);
-    cookiesPerDay(stores);
+ 
+ 
     
+    populate(stores);
+
     module.stores = stores;
     module.custByHour = custByHour;
     module.cookiesByHour = cookiesByHour;

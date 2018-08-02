@@ -14,9 +14,9 @@
 
             let store = {
                 name: elements.name.value,
-                custPerHourMin: elements.custPerHourMin.value,
-                custPerHourMax: elements.custPerHourMax.value,
-                cookiesPerCust: elements.cookiesPerCust.value,
+                custPerHourMin: parseFloat(elements.custPerHourMin.value),
+                custPerHourMax: parseFloat(elements.custPerHourMax.value),
+                cookiesPerCust: parseFloat(elements.cookiesPerCust.value),
             };
 
             try {
