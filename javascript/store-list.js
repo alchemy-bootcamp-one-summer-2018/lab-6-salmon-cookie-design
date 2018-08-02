@@ -74,12 +74,18 @@
 
     function updateStoreList() {
     // loop through and find any new fruit and render them
+        
+        // This is a paramaterization... I will temporarily hardcode this.
+        // let storesLength = stores.length;
+        // tbody.children[storesLength].remove()
+
+        tbody.children[5].remove();
+
         for(let i = 0; i < stores.length; i++) {
             let store = stores[i];
             if(lastStores.includes(store)) continue;
             htmlBuilder(store, tbody);
         }
-        lastStores = stores.slice();
     }
 
     
