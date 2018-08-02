@@ -29,17 +29,9 @@
         avgCookies: 5
     }];
 
-    function addKey(store) {
-        store.key = store.name.split('').reverse().join();
-    }
-
     function addStore(store) {
-        addKey(store);
         stores.push(store);
-    }
-
-    for(let i = 0; i < stores.length; i++) {
-        addKey(stores[i]);
+        console.log('stores', stores);
     }
 
     module.addStore = addStore;
