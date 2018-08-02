@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sales Information</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+    <div id="header">Pat's Salmon Cookies </div>
+    <div id="new-store-form">sales sales sales ABC coffee is for closers</div>
+    <form id="new-store">
+        <p>
+            <label>Location Name:</label><input id="location-name" type="text">
+        </p>
+        <p>
+            <label>Minimum Customers Per Hour</label><input id="minimum-customers" type="number">
+        </p>
+        <p>
+            <label>Maximum Customers Per Hour</label><input id="maximum-customers" type="number">
+        </p>
+        <p>
+        <label>Average Cookies Per Sale</label><input id="average-cookies" type="number">
+        </p>
+        <p>
+            <input type="submit" value="Add a Store" />
+        </p>
+    </form>
+
+    <table>
+        <thead>
+            <td>LOCATION</td>
+            <td>6AM</td>
+            <td>7AM</td>
+            <td>8AM</td>
+            <td>9AM</td>
+            <td>10AM</td>
+            <td>11AM</td>
+            <td>12PM</td>
+            <td>1PM</td>
+            <td>2PM</td>
+            <td>3PM</td>
+            <td>4PM</td>
+            <td>5PM</td>
+            <td>6PM</td>
+            <td>7PM</td>
+            <td>LOCATION TOTAL</td>
+        </thead>
+        <tbody id="stores">
+
+        </tbody>
+        <tfoot id="table-footer">
+
+        </tfoot>
+        <template id="store-template">
+            
+        </template>
+    </table>
+    <script src="js/toDOM.js"></script>
+    <script src="js/stores.js"></script>
+    <script src="js/store-form.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/store-table.js"></script>
+    <script src="js/grand-totals.js"></script>
+</body>
+</html>
