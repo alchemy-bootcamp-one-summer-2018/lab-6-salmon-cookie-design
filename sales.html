@@ -49,9 +49,52 @@
         <tfoot id="tfoot">
         </tfoot> 
     </table>
+    <section>
+            <h2>Add a location:</h2>
+            <form id="add-location">
+                <p>* is required</p>
+                <p>
+                    <label>
+                        Location:
+                        <input name="text" required><sup>*</sup>
+                    </label>
+                </p>
+
+                <p>
+                    <label>
+                        Minimum Customers Per Hour:
+                        <input name="text" required><sup>*</sup>
+                    </label>
+                </p>
+
+                <p>
+                    <label>
+                        Maximum Customers Per Hour:
+                        <input name="text" required><sup>*</sup>
+                    </label>
+                </p>
+
+                <p>
+                        <label>
+                            Average Cookies Sold Per Hour:
+                            <input name="text" required><sup>*</sup>
+                        </label>
+                    </p>
+
+                <p>
+                    <button>Add</button>
+                </p>
+
+                <p id="form-error" class="error"></p>
+                    
+            </form>
+        </section>
 <script src="js/toDom.js"></script>
 <script src="js/stores.js"></script>
 <script src="js/index.js"></script>
+<script src="js/store-table.js"></script>
+<script src="js/grand-totals.js"></script>
+
 
 </body>
 </html>
