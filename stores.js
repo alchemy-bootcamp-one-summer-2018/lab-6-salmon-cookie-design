@@ -23,12 +23,17 @@
         this.avg = avg;
     
         var hours = [];
+        var finalHours = 0;
         for (var h = 0; h < len; h++) {
             hours.push(createSalesData(min, max, avg));
         }
+
+        for (var a = 0; a < len; a++) {
+            finalHours += hours[a];
+        }
     
         this.hours = hours;
-    
+        this.finalHours = finalHours;
     };
     
     var pikeStore = new store('Pike Place Market', 'pike', 23, 65, 6.3, 14);
@@ -39,6 +44,7 @@
     
     var stores = [pikeStore, seatacStore, seattleStore, capitolStore, alkiStore];
     var totals = [];
+    var finalTotal = 0;
 
     for(let i = 0; i < 14; i++) {
         var total = 0;
@@ -47,25 +53,12 @@
         }
         totals.push(total);
     }
-    console.log(totals);
-    for(let k = 0; k < stores.length; k++) {
-        var storeFinal = totals[k];
-        //this.storeFinal = storeFinal;
+    for(let i = 0; i < totals.length; i++) {   
+        finalTotal += totals[i];
     }
-    function totally(totals) {
-        var grandTotalHourly = 0;
-        for(let j = 0; j < totals.length; j++) {
-            grandTotalHourly += totals[j];
-        }
-        return grandTotalHourly;
-    } // Refactor all of this!!!
-
-    var grandTotalHourly = totally(totals);
+    totals.push(finalTotal);
+    console.log(totals);
+    module.totals = totals;
     module.stores = stores;
-    module.totals = {
-        name: 'Totals',
-        hours: totals,
-        storeTotals: grandTotalHourly
-    }; // Refactor all of this!!!
 
 })(window.module = window.module || {});
