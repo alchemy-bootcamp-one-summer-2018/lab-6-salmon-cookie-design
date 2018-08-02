@@ -29,6 +29,20 @@
         avgCookies: 5
     }];
 
+    function addKey(store) {
+        store.key = store.name.split('').reverse().join();
+    }
+
+    function addStore(store) {
+        addKey(store);
+        stores.push(store);
+    }
+
+    for(let i = 0; i < stores.length; i++) {
+        addKey(stores[i]);
+    }
+
+    module.addStore = addStore;
 
     let randomHoursArray = [];
     let cookieSalesArray = [];
@@ -47,15 +61,6 @@
     }
     console.log('stores array:', stores);
 
-    
-    // let storeTotal = [];
-    // for(let i = 0; i < 14; i++) {
-    //     let total = 0;
-    //     total += stores[i].cookiesSalesPerHour[i];
-    //     storeTotal.push(total);
-    // }
-    // console.log('store total', storeTotal);
-        
     let totalCookiesPerHour = [];
     for(let i = 0; i < 14; i++) {
         let total = 0;
