@@ -34,21 +34,6 @@
         key: 'Alki'    
     }];
 
-    function addKey(store) {
-        store.key = store.name.split('').reverse().join();
-    }
-
-    function addStore(store) {
-        addKey(store);
-        stores.push(store);
-    }
-
-    for(let i = 0; i < stores.length; i++) {
-        addKey(stores[i]);
-    }
-
-    module.addStore = addStore;
-
     for(let i = 0; i < stores.length; i++) {
         stores[i].customers = [];
         for(let j = 0; j < 14; j++) {
@@ -56,8 +41,11 @@
             let max = Math.floor(parseInt(stores[i].max));
             let customersThisHour = Math.floor(Math.random() * (max - min)) + min;
             stores[i].customers.push(customersThisHour);
+            
         }
     }
+    
+
 
     for(let i = 0; i < stores.length; i++) {
         stores[i].macaronsPerHour = [];
@@ -101,5 +89,16 @@
         storeTotals: grandTotal
     };
     console.log(module.totals);
+
+    function addStore(store) {
+        console.log('add store working');
+        stores.push(store);
+        console.log('store push', stores);
+    }
+
+    module.addStore = addStore;
+    console.log('module.stores', module.stores);
+
+
 
 })(window.module = window.module || {});
