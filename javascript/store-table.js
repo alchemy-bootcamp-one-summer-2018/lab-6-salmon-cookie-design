@@ -60,7 +60,7 @@
     }
 
     function cookiesByHour(storeArray) {
-        console.log(storeArray);
+
         for(let i = 0; i < storeArray.length; i++) {
             storeArray[i]['cookiesByHour'] = [];
             for(let hr = 0; hr < 13; hr++) {
@@ -83,6 +83,19 @@
         }
     }
 
+    function addKey(store) {
+        store.key = store.name.split('').reverse().join();
+    }
+
+    for(var i = 0; i < stores.length; i++) {
+        addKey(stores[i]);
+    }
+
+    function addStore(store) {
+        addKey(store);
+        stores.push(store);
+    }
+
     custByHour(stores);
     cookiesByHour(stores);
     cookiesPerDay(stores);
@@ -91,5 +104,7 @@
     module.custByHour = custByHour;
     module.cookiesByHour = cookiesByHour;
     module.cookiesPerDay = cookiesPerDay;
+    module.addStore = addStore;
 
+    
 })(window.module = window.module || {});

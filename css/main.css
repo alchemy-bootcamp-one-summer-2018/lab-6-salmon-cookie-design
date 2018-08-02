@@ -291,26 +291,26 @@ tfoot {
 }
 
 /* Forms */
-div.store-form {
+form.store-form {
     width: 25%;
     margin: auto;
 
 }
 
-div.store-form form div, 
-div.store-form form fieldset {
+form.store-form div, 
+form.store-form fieldset {
     display: flex;
     justify-content: space-around;
 }
 
-div.store-form form div button,
-div.contact-form form div button {
+form.store-form div button,
+div.contact-form div button {
     margin: 5px;
     padding: 5px;
 }
 
-div.store-form form fieldset p, 
-div.store-form form fieldset input {
+form.store-form fieldset p, 
+form.store-form fieldset input {
     margin: 3px;
     padding: 3px;
 }

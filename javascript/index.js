@@ -6,6 +6,8 @@
     let toDOM = module.toDOM;
     let html = module.html;
 
+    let addStore = module.addStore;
+    let initStoreForm = module.initStoreForm;
 
     // create a function we can call with data,
     // that returns DOM we can append into the 
@@ -75,6 +77,11 @@
     htmlBuilder(stores, tbody);
     htmlBuilder(stats, tfoot);
 
+    initStoreForm(function(store) {
+        addStore(store);
+        // updateCounter();
+        // updateFruitList();
+    });
 
 
 })(window.module = window.module || {});

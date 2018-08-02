@@ -54,28 +54,31 @@
             
         <section class="store-grid">
             
-            <div class="store-form">
-                <form>
+            <div>
+                <form id="store-form" class="store-form">
                     <fieldset>
                         <legend>Add a new store to the table</legend>
                 
                         <p class="question">Location Name</p>
-                        <input class="text" type="text" name="locationName" placeholder="Enter location" required/>
+                        <input class="text" type="text" name="name" placeholder="Enter location" value="Springfield" required/>
                 
                         <p class="question">Minimum Customers Per Hour</p>
-                        <input class="text" type="text" name="minCustomers" placeholder="Enter minimum customers" required/>
+                        <input class="text" type="number" name="custPerHourMin" placeholder="Enter minimum customers" value="5" required/>
                 
                         <p class="question">Maximum Customers Per Hour</p>
-                        <input class="text" type="text" name="maxCustomers" placeholder="Enter maximum customers" required/>
+                        <input class="text" type="number" name="custPerHourMax" placeholder="Enter maximum customers" value="100" required/>
                 
                         <p class="question">Average Cookies Per Sale</p>
-                        <input class="text" type="text" name="avgSale" placeholder="Enter average cookies per sale" required/>
+                        <input class="text" type="number" name="cookiesPerCust" placeholder="Enter average cookies per sale" value="3" required/>
                     </fieldset>
                 
                     <div>
                         <button id="sales-submit" type="submit">Add Store</button>
                         <button id="sales-reset" type="reset">Start Over</button>
                     </div>   
+
+                    <p id="form-error" class="error"></p>
+
                 </form>
             </div>
         
@@ -110,6 +113,8 @@
     <script src="/javascript/store-table.js"></script>
     <script src="/javascript/grand-totals.js"></script>
     <script src="/javascript/toDOM.js"></script>
+    <script src="/javascript/store-form.js"></script>
+
     <script src="/javascript/index.js"></script>
 
 </body>
