@@ -77,7 +77,7 @@
         for(let i = 0; i < stores.length; i++) {
             let store = stores[i];
             if(lastStores.includes(store)) continue;
-            htmlBuilder(store);
+            htmlBuilder(store, tbody);
         }
         lastStores = stores.slice();
     }
