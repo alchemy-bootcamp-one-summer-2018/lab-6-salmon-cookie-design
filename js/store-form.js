@@ -9,7 +9,7 @@
         form.addEventListener('submit', function(event) {
             event.preventDefault();
 
-            let elements = form.element;
+            let elements = form.elements;
 
             let store = {
                 location: elements.location.value,
@@ -26,7 +26,7 @@
                 form.requestFullscreen();
                 document.activeElement.blur();
             }
-            catch(err) {
+            catch (err) {
                 error.textContent = err.message;
             }
         });

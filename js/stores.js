@@ -37,6 +37,13 @@
     let randomHoursArray = [];
     let cookieSalesArray = [];
 
+    function addStore(stores) {
+        stores.push(stores);
+    }
+    console.log('new stores added to stores???', stores);
+    module.addStore = addStore;
+
+
     for(let j = 0; j < stores.length; j++) {
 
         stores[j].cookieSalesPerStore = [];
@@ -108,7 +115,6 @@
         } 
         
     }
-
     //console.log('these are store totals', storeTotals);
 
 

@@ -8,5 +8,6 @@
         addStore(store);
         console.log('store', store);
     });
+    
 
 })(window.module = window.module || {});
