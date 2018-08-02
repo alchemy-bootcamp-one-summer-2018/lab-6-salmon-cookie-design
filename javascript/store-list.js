@@ -86,6 +86,8 @@
             if(lastStores.includes(store)) continue;
             htmlBuilder(store, tbody);
         }
+
+        htmlBuilder(stats, tfoot);
     }
 
     

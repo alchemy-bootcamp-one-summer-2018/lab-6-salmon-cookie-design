@@ -106,8 +106,6 @@
         custByHour(stores);
         cookiesByHour(stores);
         cookiesPerDay(stores);
-        
-        
     }
     
     populate(stores);
