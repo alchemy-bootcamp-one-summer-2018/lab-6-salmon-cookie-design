@@ -47,6 +47,6 @@
 })(window.module = window.module || {});
 
 //add store form in its store form function
-function((onStoreAdded){
-    //let
-}
+//function(onStoreAdded) {
+//let
+//}
