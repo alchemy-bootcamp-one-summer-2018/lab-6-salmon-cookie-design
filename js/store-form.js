@@ -5,7 +5,6 @@
     let form = document.getElementById('new-store');
     let error = document.getElementById('form-error');
     
-    console.log('test');
     //export an initStoreForm function that takes
     // an onStoreAdded callback function
     function initStoreForm(onStoreAdded) {
@@ -18,7 +17,7 @@
 
             let elements = form.elements;
             console.log(elements);
-
+            //let elements.minCustomers = document.getElementBy
             //gather the form data into a new STORE object
             let store = {
                 name: elements.name.value,
@@ -27,8 +26,8 @@
                 avgSale: elements.avgSale.value
                 
             };
-
             //respond to success or error
+            console.log('form submitted');
             try {
                 error.textContent = '';
                 onStoreAdded(store);
@@ -40,6 +39,7 @@
                 error.textContent = err.message;
             }
         });
+        console.log('initStoreForm wired to index');
     }
 
     module.initStoreForm = initStoreForm;

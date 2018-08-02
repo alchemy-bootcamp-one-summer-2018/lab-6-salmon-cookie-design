@@ -4,7 +4,6 @@
     let addStore = module.addStore;
     let initStoreForm = module.initStoreForm;
     
-    console.log('hello from index'); 
     // initStoreForm()
     initStoreForm(function onStoreAdded(store) {
         addStore(store);
