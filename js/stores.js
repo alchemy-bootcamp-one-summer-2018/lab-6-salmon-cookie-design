@@ -34,11 +34,10 @@
         console.log('stores', stores);
     }
 
-    module.addStore = addStore;
-
+    
     let randomHoursArray = [];
     let cookieSalesArray = [];
-
+    
     for(let j = 0; j < stores.length; j++) {
         stores[j].cookiesSalesPerHour = [];
         for(let i = 0; i < 14; i++) {
@@ -48,11 +47,11 @@
             randomHoursArray.push(custPerHour);
             cookieSalesArray.push(cookieSales);
             stores[j].cookiesSalesPerHour.push(cookieSales);
-
+            
         } 
     }
     console.log('stores array:', stores);
-
+    
     let totalCookiesPerHour = [];
     for(let i = 0; i < 14; i++) {
         let total = 0;
@@ -61,7 +60,7 @@
         }
         totalCookiesPerHour.push(total);
     }
-
+    
     for(let i = 0; i < stores.length; i++) {
         stores[i].storeTotals = [];
         let storeTotal = totally(stores[i].cookiesSalesPerHour);
@@ -78,9 +77,7 @@
     };
     
     console.log(totalsPerHour);
-
-    module.stores = stores;
-    module.totalsPerHour = totalsPerHour;
+    
     
     console.log('grand total', grandTotal);
     function totally(totals) {
@@ -90,5 +87,9 @@
         }
         return grandTotal;
     }
-
+    
+    module.stores = stores;
+    module.totalsPerHour = totalsPerHour;
+    module.addStore = addStore;
+    
 })(window.module = window.module || {});
